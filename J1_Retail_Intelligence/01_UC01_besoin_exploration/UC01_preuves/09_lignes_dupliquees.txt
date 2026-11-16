@@ -1,0 +1,9 @@
+Preuve 09 - Lignes entièrement identiques (jeu initial, fichiers complets)
+Ce que cette preuve démontre : l'absence de lignes entièrement dupliquées dans les ventes et les retours (seuls 83 clics sont en double).
+
+table                      lignes lignes_distinctes   doublons
+store_sales                667579         667579          0
+store_returns               37902          37902          0
+web_sales                  668052         668052          0
+web_returns                 38487          38487          0
+web_clickstreams          6770550        6770467         83

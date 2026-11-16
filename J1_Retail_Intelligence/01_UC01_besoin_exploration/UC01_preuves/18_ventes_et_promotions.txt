@@ -1,0 +1,16 @@
+Preuve 18 - Cohérence entre les ventes et la promotion rattachée (jeu initial)
+Ce que cette preuve démontre : que la promotion rattachée à une vente ne correspond presque jamais à l'article vendu ni à la période de la promotion.
+Colonnes de promotion (spec) : p_promo_sk, p_start_date_sk, p_end_date_sk, p_item_sk ; 300 promotions, 31 avec p_discount_active = Y
+
+store_sales (ss_item_sk, ss_sold_date_sk, ss_promo_sk)
+  lignes avec promotion : 667421
+  article de la vente = article de la promotion : 33 (0.005 %)
+  date de vente dans la période de la promotion : 204615 (30.7 %)
+  les deux critères : 6
+
+web_sales (ws_item_sk, ws_sold_date_sk, ws_promo_sk)
+  lignes avec promotion : 667931
+  article de la vente = article de la promotion : 28 (0.004 %)
+  date de vente dans la période de la promotion : 204928 (30.7 %)
+  les deux critères : 6
+

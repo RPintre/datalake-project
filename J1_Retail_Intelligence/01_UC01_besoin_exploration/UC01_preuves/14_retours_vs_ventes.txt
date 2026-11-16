@@ -1,0 +1,38 @@
+Preuve 14 - Retours magasin comparés aux ventes magasin (clé : numéro de ticket + article)
+Ce que cette preuve démontre : que 100 % des retours se rattachent à une vente, et la qualité de ce rapprochement (cas ambigus, client, dates, quantités, montants).
+Retours magasin lus : 37902
+Ticket du retour trouvé dans les ventes du jeu initial : 37902
+Ticket trouvé seulement dans les ventes du rafraîchissement : 0
+Ticket introuvable dans les ventes : 0
+Couple (ticket, article) trouvé dans les ventes du jeu initial : 37902
+Couple (ticket, article) trouvé seulement dans les ventes du rafraîchissement : 0
+Couple (ticket, article) introuvable : 0
+Couples trouvés à plusieurs lignes de vente (rapprochement ambigu) : 470
+Couples trouvés à une seule ligne de vente (comparés ci-dessous) : 37432
+  même client que la vente : 33684
+  même démographie client (cdemo) : 33670
+  même foyer (hdemo) : 33671
+  même adresse : 33676
+  même magasin : 37432
+  date de retour >= date de vente : 37432
+  quantité retournée <= quantité vendue : 37432
+  montant retourné = prix de vente x quantité retournée : 37432
+
+Retours web comparés aux ventes web (clé : numéro de commande + article)
+Retours web lus : 38487
+Commande du retour trouvée dans les ventes du jeu initial : 38487
+Commande trouvée seulement dans les ventes du rafraîchissement : 0
+Commande introuvable dans les ventes : 0
+Couple (commande, article) trouvé dans les ventes du jeu initial : 38487
+Couple (commande, article) trouvé seulement dans les ventes du rafraîchissement : 0
+Couple (commande, article) introuvable : 0
+Couples trouvés à plusieurs lignes de vente (rapprochement ambigu) : 439
+Couples trouvés à une seule ligne de vente (comparés ci-dessous) : 38048
+  client remboursé = client facturé de la vente : 32866
+  client remboursé = client livré de la vente : 35466
+  client retournant = client facturé de la vente : 32866
+  client retournant = client livré de la vente : 35466
+  au moins un des quatre rapprochements client vérifié : 35466
+  date de retour >= date de vente : 38048
+  quantité retournée <= quantité vendue : 38048
+  montant retourné = prix de vente x quantité retournée : 38048

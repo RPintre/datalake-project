@@ -1,0 +1,30 @@
+Preuve 04 - Nombre de colonnes : spécification TPCx-BB v1.7.0 et fichier .dat (jeu initial)
+Ce que cette preuve démontre : que les 23 tables ont exactement le nombre de colonnes décrit par la spécification, sur toutes les lignes, ce qui valide l'attribution des noms de colonnes.
+Méthode : champs séparés par | comptés sur toutes les lignes du fichier (min et max) ; colonnes de la spec comptées dans les scripts de création de tables
+
+table                         spec  fich_min  fich_max resultat
+customer                        18        18        18 OK
+customer_address                13        13        13 OK
+customer_demographics            9         9         9 OK
+date_dim                        28        28        28 OK
+household_demographics           5         5         5 OK
+income_band                      3         3         3 OK
+item                            22        22        22 OK
+promotion                       19        19        19 OK
+reason                           3         3         3 OK
+ship_mode                        6         6         6 OK
+store                           29        29        29 OK
+time_dim                        10        10        10 OK
+warehouse                       14        14        14 OK
+web_site                        26        26        26 OK
+web_page                        14        14        14 OK
+inventory                        4         4         4 OK
+store_sales                     23        23        23 OK
+store_returns                   20        20        20 OK
+web_sales                       34        34        34 OK
+web_returns                     24        24        24 OK
+item_marketprices                6         6         6 OK
+web_clickstreams                 6         6         6 OK
+product_reviews                  8         8         8 OK
+
+Total colonnes (spec) : 344

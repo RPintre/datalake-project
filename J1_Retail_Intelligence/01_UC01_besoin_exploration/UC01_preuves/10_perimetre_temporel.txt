@@ -1,0 +1,14 @@
+Preuve 10 - Périmètre temporel observé (jeu initial)
+Ce que cette preuve démontre : la période couverte par chaque table de faits et le rythme hebdomadaire des relevés de stock.
+Dates reconstituées en cherchant la clé de date dans date_dim (colonne d_date)
+
+store_sales        ss_sold_date_sk      2001-01-01 (36890) -> 2005-12-13 (38697)
+web_sales          ws_sold_date_sk      2001-01-01 (36890) -> 2005-12-13 (38697)
+web_clickstreams   wcs_click_date_sk    2001-01-01 (36890) -> 2005-12-13 (38697)
+inventory          inv_date_sk          2001-01-01 (36890) -> 2005-12-12 (38696)
+store_returns      sr_returned_date_sk  2001-01-25 (36914) -> 2007-11-14 (39398)
+web_returns        wr_returned_date_sk  2001-01-26 (36915) -> 2008-03-18 (39523)
+
+date_dim : 1900-01-01 -> 2199-12-31 (109573 jours)
+
+Inventory : 259 dates de relevé distinctes ; écart entre deux relevés consécutifs : 7 jours (relevé hebdomadaire) ; 18000 articles et 5 entrepôts distincts

@@ -1,0 +1,15 @@
+Preuve 17 - Recouvrement entre le jeu initial (data) et le jeu de rafraîchissement (data_refresh)
+Ce que cette preuve démontre : que le rafraîchissement ne double aucun ticket, commande ni ligne de stock, et qu'aucune colonne ne décrit le type d'événement des clics.
+
+Stock (inventory) : relevé du 38696 (dernière date du jeu initial)
+  lignes du jeu initial à cette date : 35100
+  lignes du rafraîchissement à cette date : 54900
+  total : 90000 (18000 articles x 5 entrepôts) ; lignes du rafraîchissement déjà présentes dans le jeu initial : 0
+  dates du rafraîchissement : 38696, 38703, 38710
+
+Tickets et commandes du rafraîchissement
+  store_sales : 900 tickets distincts (numéros 89100 à 89999), 0 déjà présent dans le jeu initial
+  web_sales : 900 commandes distinctes (numéros 89100 à 89999), 0 déjà présente dans le jeu initial
+
+Colonnes de web_clickstreams (spécification TPCx-BB v1.7.0) : wcs_click_date_sk wcs_click_time_sk wcs_sales_sk wcs_item_sk wcs_web_page_sk wcs_user_sk 
+Aucune colonne ne décrit le type d'événement (consultation, ajout au panier, achat).

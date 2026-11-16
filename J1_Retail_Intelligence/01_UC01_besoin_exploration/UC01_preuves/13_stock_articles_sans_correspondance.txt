@@ -1,0 +1,8 @@
+Preuve 13 - Stock : articles référencés par inventory absents de item (jeu initial)
+Ce que cette preuve démontre : que les 180 articles du stock absents du catalogue initial sont tous présents dans le catalogue du rafraîchissement.
+Lignes de stock concernées : 232380
+Articles distincts sans correspondance : 180
+Plage des clés manquantes : 17820 à 17999
+Plage des clés de item (jeu initial) : 0 à 17819
+Plage des clés de item (rafraîchissement) : 17820 à 17999
+Articles sans correspondance après ajout du rafraîchissement de item : 0 (voir 12_relations_cles_etrangeres.csv)

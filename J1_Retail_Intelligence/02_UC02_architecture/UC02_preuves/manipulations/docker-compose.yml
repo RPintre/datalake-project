@@ -1,0 +1,52 @@
+# Pile locale du parcours : HDFS (Hadoop) + Spark/PySpark, dans des conteneurs Docker.
+# Lancement : docker compose up -d      Arret : docker compose down
+services:
+  namenode:
+    image: apache/hadoop:3.4.3
+    container_name: namenode
+    hostname: namenode
+    command: ["hdfs", "namenode"]
+    ports:
+      - "9870:9870"
+    env_file:
+      - ./hadoop.env
+    environment:
+      ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+
+  datanode:
+    image: apache/hadoop:3.4.3
+    container_name: datanode
+    hostname: datanode
+    command: ["hdfs", "datanode"]
+    env_file:
+      - ./hadoop.env
+    depends_on:
+      - namenode
+
+  # Conteneur client : execute les commandes `hdfs dfs`, avec les donnees sources en lecture seule.
+  client:
+    image: apache/hadoop:3.4.3
+    container_name: hdfs-client
+    command: ["sleep", "infinity"]
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - ${DATA_DIR:-D:/code/datalake/retail_project}:/donnees:ro
+      - ./scripts:/scripts:ro
+      - ./sorties:/sorties
+    depends_on:
+      - namenode
+      - datanode
+
+  # Conteneur Spark : execute le traitement PySpark qui lit et ecrit dans HDFS.
+  spark:
+    image: apache/spark:4.2.1-python3
+    container_name: spark
+    user: root
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./scripts:/scripts:ro
+      - ./sorties:/sorties
+    depends_on:
+      - namenode
+      - datanode

@@ -1,0 +1,18 @@
+Preuve 19 - Retours dont le client diffère de celui de la vente : attributs du retour (jeu initial)
+Ce que cette preuve démontre : pourquoi le client de certains retours diffère de celui de la vente : références tirées indépendamment en magasin, autre client existant en web.
+Méthode : retours dont le couple (ticket ou commande, article) correspond à une seule ligne de vente ; comparaison avec la vente et avec la fiche du client du retour (table customer)
+
+Retours magasin (sr_customer_sk, sr_cdemo_sk, sr_hdemo_sk, sr_addr_sk)
+  retours à une seule ligne de vente : 37432
+  client identique à la vente : 33684 (démographie identique à la vente : 33670 ; adresse identique : 33676)
+  client différent : 3748
+    démographie, foyer, adresse vides : 0
+    démographie = vente : 0 ; = fiche du client du retour : 0
+    foyer = vente : 0 ; = fiche : 0
+    adresse = vente : 0 ; = fiche : 0
+
+Retours web (wr_returning_customer_sk, wr_returning_cdemo_sk) comparés au client livré de la vente
+  retours à une seule ligne de vente : 38048
+  client retournant = client livré : 35466 (démographie = fiche du client : 35403)
+  client retournant différent : 2582
+    démographie = fiche du client retournant : 2582 ; = vente : 0

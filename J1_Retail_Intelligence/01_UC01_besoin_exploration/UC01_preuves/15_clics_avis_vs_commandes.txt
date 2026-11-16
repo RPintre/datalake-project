@@ -1,0 +1,25 @@
+Preuve 15 - Clics web comparés aux commandes web (clé : wcs_sales_sk = ws_order_number)
+Ce que cette preuve démontre : que les clics d'achat et les avis se rattachent à des commandes web, avec le même client, la même date et un article de la commande.
+Clics lus : 6770550
+Clics avec un numéro de vente renseigné : 668052
+  numéro trouvé comme numéro de commande dans web_sales (jeu initial) : 668052
+  numéro trouvé seulement dans le rafraîchissement : 0
+  numéro introuvable : 0
+  commandes distinctes référencées : 89100
+  utilisateur = client facturé de la commande : 668052
+  utilisateur = client livré de la commande : 619813
+  utilisateur = client facturé ou livré : 668052
+  date du clic = date de la commande : 668052
+  article du clic fait partie des articles de la commande : 668052
+Clics sans numéro de vente et sans utilisateur : 2853461
+
+Avis produits comparés aux commandes web (clé : pr_order_sk = ws_order_number)
+Avis lus : 89991
+Avis sans numéro de commande : 0
+Numéro de commande trouvé dans web_sales (jeu initial) : 89991
+Numéro de commande trouvé seulement dans le rafraîchissement : 0
+Numéro de commande introuvable : 0
+Article de l'avis fait partie des articles de la commande : 89991
+Utilisateur de l'avis = client facturé de la commande : 83488
+Utilisateur de l'avis = client livré de la commande : 89991
+Utilisateur de l'avis = client facturé ou livré : 89991

@@ -1,0 +1,34 @@
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+
+======== SILVER : typage, reunion des deux jeux, controles ========
+item : 17820 lignes (jeu initial) + 180 lignes (rafraichissement) = 18000 lignes reunies ; conversions de type invalides : 0
+date_dim : 109573 lignes (jeu initial) + 0 lignes (rafraichissement) = 109573 lignes reunies ; conversions de type invalides : 0
+store_sales : 667579 lignes (jeu initial) + 6632 lignes (rafraichissement) = 674211 lignes reunies ; conversions de type invalides : 0
+item : 18000 cles distinctes pour 18000 lignes (unicite de la cle)
+date_dim : 109573 cles distinctes pour 109573 lignes
+store_sales : 90000 tickets distincts
+coherence quantite x prix de vente = montant : 0 ecarts
+integrite referentielle ss_item_sk -> item : 0 valeurs sans correspondance
+integrite referentielle ss_sold_date_sk -> date_dim : 0 valeurs sans correspondance
+Tables Silver ecrites en Parquet : item, date_dim, store_sales
+
+======== GOLD : indicateurs mensuels des ventes magasin ========
+Table Gold ecrite en Parquet : 60 mois
++------+-----+----------------+---------+------------+------------+---------------+
+|d_year|d_moy|chiffre_affaires|quantites|transactions|panier_moyen|taux_remise_pct|
++------+-----+----------------+---------+------------+------------+---------------+
+|2001  |1    |21329226.01     |574902   |1528        |13958.92    |50.25          |
+|2001  |2    |19964670.13     |529739   |1380        |14467.15    |50.29          |
+|2001  |3    |21724974.85     |569439   |1528        |14217.92    |49.94          |
+|2001  |4    |21020109.04     |557668   |1479        |14212.38    |50.21          |
+|2001  |5    |22003924.87     |584690   |1528        |14400.47    |49.93          |
+|2001  |6    |21626561.44     |562702   |1479        |14622.42    |49.64          |
+|2001  |7    |22123785.32     |576657   |1528        |14478.92    |49.53          |
+|2001  |8    |21752837.67     |578727   |1527        |14245.47    |50.18          |
+|2001  |9    |21595240.28     |567922   |1479        |14601.24    |49.99          |
+|2001  |10   |22356984.72     |578060   |1528        |14631.53    |49.29          |
+|2001  |11   |21252823.06     |566623   |1479        |14369.72    |50.40          |
+|2001  |12   |21408257.94     |567105   |1528        |14010.64    |50.07          |
++------+-----+----------------+---------+------------+------------+---------------+
+only showing top 12 rows
+Totaux (jeu initial + rafraichissement) : lignes = 674211, tickets distincts = 90000, quantites = 34089501, chiffre d'affaires = 1290066342.21

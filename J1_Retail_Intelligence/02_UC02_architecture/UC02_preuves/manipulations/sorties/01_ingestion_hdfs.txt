@@ -1,0 +1,51 @@
+== 1. Creation de l'arborescence du Data Lake dans HDFS ==
+== 2. Depot des fichiers sources dans la zone Bronze (jeu initial) ==
+== 3. Depot des fichiers du jeu de rafraichissement (depot separe) ==
+== 4. Contenu de l'arborescence ==
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data/date_dim
+-rw-r--r--   1 hadoop supergroup   15395800 2026-11-16 15:35 /datalake/bronze/data/date_dim/date_dim.dat
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data/item
+-rw-r--r--   1 hadoop supergroup    6799286 2026-11-16 15:35 /datalake/bronze/data/item/item.dat
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data/store_sales
+-rw-r--r--   1 hadoop supergroup   92764700 2026-11-16 15:35 /datalake/bronze/data/store_sales/store_sales.dat
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data_refresh
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data_refresh/item
+-rw-r--r--   1 hadoop supergroup      69173 2026-11-16 15:35 /datalake/bronze/data_refresh/item/item.dat
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/bronze/data_refresh/store_sales
+-rw-r--r--   1 hadoop supergroup     922171 2026-11-16 15:35 /datalake/bronze/data_refresh/store_sales/store_sales.dat
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/gold
+drwxr-xr-x   - hadoop supergroup          0 2026-11-16 15:35 /datalake/silver
+== 5. Taille par table (zone Bronze) ==
+14.7 M  14.7 M  /datalake/bronze/data/date_dim
+6.5 M   6.5 M   /datalake/bronze/data/item
+88.5 M  88.5 M  /datalake/bronze/data/store_sales
+67.6 K   67.6 K   /datalake/bronze/data_refresh/item
+900.6 K  900.6 K  /datalake/bronze/data_refresh/store_sales
+== 6. Controle de l'integrite des blocs (fsck) ==
+Connecting to namenode via http://namenode:9870/fsck?ugi=hadoop&files=1&blocks=1&path=%2Fdatalake
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Mon Nov 16 15:35:43 UTC 2026 in 18 milliseconds
+
+
+The filesystem under path '/datalake' is HEALTHY
+== 7. Controle du nombre de lignes deposees ==
+store_sales (jeu initial) : 667579 lignes dans HDFS, 667579 lignes dans le fichier source
+item (jeu initial) : 17820 lignes dans HDFS, 17820 lignes dans le fichier source
+date_dim (jeu initial) : 109573 lignes dans HDFS, 109573 lignes dans le fichier source

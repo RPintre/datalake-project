@@ -1,0 +1,48 @@
+== Arborescence Silver et Gold ==
+drwxr-xr-x   - root supergroup          0 2026-11-16 15:38 /datalake/silver/date_dim
+-rw-r--r--   1 root supergroup          0 2026-11-16 15:38 /datalake/silver/date_dim/_SUCCESS
+-rw-r--r--   1 root supergroup    1179036 2026-11-16 15:38 /datalake/silver/date_dim/part-00000-69e3e0b4-d410-4d6b-9261-9cb1b9ae21aa-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    1159239 2026-11-16 15:38 /datalake/silver/date_dim/part-00001-69e3e0b4-d410-4d6b-9261-9cb1b9ae21aa-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    1135527 2026-11-16 15:38 /datalake/silver/date_dim/part-00002-69e3e0b4-d410-4d6b-9261-9cb1b9ae21aa-c000.snappy.parquet
+-rw-r--r--   1 root supergroup     166336 2026-11-16 15:38 /datalake/silver/date_dim/part-00003-69e3e0b4-d410-4d6b-9261-9cb1b9ae21aa-c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-11-16 15:38 /datalake/silver/item
+-rw-r--r--   1 root supergroup          0 2026-11-16 15:38 /datalake/silver/item/_SUCCESS
+-rw-r--r--   1 root supergroup    2204992 2026-11-16 15:38 /datalake/silver/item/part-00000-1d6bf444-6b1d-4f54-946a-bc3631345f38-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    1370653 2026-11-16 15:38 /datalake/silver/item/part-00001-1d6bf444-6b1d-4f54-946a-bc3631345f38-c000.snappy.parquet
+-rw-r--r--   1 root supergroup      47126 2026-11-16 15:38 /datalake/silver/item/part-00002-1d6bf444-6b1d-4f54-946a-bc3631345f38-c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-11-16 15:38 /datalake/silver/store_sales
+-rw-r--r--   1 root supergroup          0 2026-11-16 15:38 /datalake/silver/store_sales/_SUCCESS
+-rw-r--r--   1 root supergroup    9233465 2026-11-16 15:38 /datalake/silver/store_sales/part-00000-f51baa0f-8748-415d-9014-e53d1ad49ded-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    9199910 2026-11-16 15:38 /datalake/silver/store_sales/part-00001-f51baa0f-8748-415d-9014-e53d1ad49ded-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    9188169 2026-11-16 15:38 /datalake/silver/store_sales/part-00002-f51baa0f-8748-415d-9014-e53d1ad49ded-c000.snappy.parquet
+-rw-r--r--   1 root supergroup    7649624 2026-11-16 15:38 /datalake/silver/store_sales/part-00003-f51baa0f-8748-415d-9014-e53d1ad49ded-c000.snappy.parquet
+-rw-r--r--   1 root supergroup     395932 2026-11-16 15:38 /datalake/silver/store_sales/part-00004-f51baa0f-8748-415d-9014-e53d1ad49ded-c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-11-16 15:39 /datalake/gold/ventes
+drwxr-xr-x   - root supergroup          0 2026-11-16 15:39 /datalake/gold/ventes/kpi_mensuel_magasin
+-rw-r--r--   1 root supergroup          0 2026-11-16 15:39 /datalake/gold/ventes/kpi_mensuel_magasin/_SUCCESS
+-rw-r--r--   1 root supergroup       3552 2026-11-16 15:39 /datalake/gold/ventes/kpi_mensuel_magasin/part-00000-c53922fc-c069-4f61-a706-7a4cf6b904ab-c000.snappy.parquet
+
+== Taille par table Silver et Gold ==
+3.5 M   3.5 M   /datalake/silver/date_dim
+3.5 M   3.5 M   /datalake/silver/item
+34.0 M  34.0 M  /datalake/silver/store_sales
+3.5 K  3.5 K  /datalake/gold/ventes/kpi_mensuel_magasin
+
+== Taille totale du Data Lake ==
+151.5 M  151.5 M  /datalake
+
+== Controle de l integrite des blocs (fsck) ==
+Status: HEALTHY
+ Total size:	158884691 B
+ Total files:	22
+ Total blocks (validated):	18 (avg. block size 8826927 B)
+ Under-replicated blocks:	0 (0.0 %)
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Total size:	0 B
+ Total files:	0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+The filesystem under path '/datalake' is HEALTHY

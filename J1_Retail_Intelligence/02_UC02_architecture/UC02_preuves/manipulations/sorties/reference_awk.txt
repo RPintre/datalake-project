@@ -1,0 +1,4 @@
+Valeurs de reference calculees sans Spark (awk) sur les memes fichiers, pour controler les resultats du traitement PySpark
+store_sales (jeu initial + rafraichissement) : lignes = 674211, tickets distincts = 90000, quantites = 34089501, chiffre d affaires = 1290066342.21
+item (jeu initial + rafraichissement) : lignes = 18000
+date_dim : lignes = 109573

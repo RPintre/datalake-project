@@ -1,0 +1,16 @@
+Preuve 16 - store_sales : un ticket correspond-il à une seule date, un seul magasin et un seul client ?
+Ce que cette preuve démontre : que chaque ticket ou commande correspond à une seule date et un seul client, et que les dates des prix concurrents sont cohérentes.
+Tickets distincts : 89100
+Tickets avec plusieurs combinaisons date/magasin/client : 0
+
+web_sales : une commande correspond-elle à une seule date, un seul client facturé et un seul client livré ?
+Commandes distinctes : 89100
+Commandes avec plusieurs combinaisons date/client facturé/client livré : 0
+
+Plages de valeurs : ss_ticket_number 0 à 89099 ; ws_order_number 0 à 89099 (deux numérotations distinctes, de même étendue)
+
+item_marketprices : date de fin comparée à la date de début
+lignes avec les deux dates : 89070
+fin > début : 88837
+fin = début : 233
+fin < début : 0
