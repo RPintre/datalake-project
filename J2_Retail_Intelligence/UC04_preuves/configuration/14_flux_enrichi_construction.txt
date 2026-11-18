@@ -1,0 +1,24 @@
+== Heure de debut : 17/11/2026 17:58:01 (heure de Paris)
+== Etape 12 : enrichissement du flux (UpdateAttribute, RouteOnAttribute, LogAttribute) ==
+Connexion directe GetFile -> PutHDFS remplacee par le flux enrichi
+Flux enrichi cree : GetFile -> UpdateAttribute -> RouteOnAttribute -> (tables_reference) PutHDFS | (unmatched) LogAttribute
+GetFile_entree               type=GetFile       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+PutHDFS_raw_nifi             type=PutHDFS       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_echec_depot     type=LogAttribute  etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+UpdateAttribute_suivi        type=UpdateAttribute etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+RouteOnAttribute_domaine     type=RouteOnAttribute etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_non_reconnu     type=LogAttribute  etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=0 arretes=6 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=0 arretes=6 invalides=0 desactives=0
+connexion PutHDFS_raw_nifi -> LogAttribute_echec_depot ['failure'] : file d'attente = 0 (0 bytes)
+connexion GetFile_entree -> UpdateAttribute_suivi ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> LogAttribute_non_reconnu ['unmatched'] : file d'attente = 0 (0 bytes)
+connexion UpdateAttribute_suivi -> RouteOnAttribute_domaine ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> PutHDFS_raw_nifi ['tables_reference'] : file d'attente = 0 (0 bytes)
+== Heure de fin : 17/11/2026 17:58:02

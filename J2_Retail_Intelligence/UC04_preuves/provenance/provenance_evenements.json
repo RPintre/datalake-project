@@ -1,0 +1,326 @@
+[
+  {
+    "eventId": 0,
+    "eventTime": "11/17/2026 16:58:30.232 CET",
+    "eventType": "RECEIVE",
+    "componentName": "GetFile_entree",
+    "flowFileUuid": "b2e27267-2443-46be-a495-92cf4551dcdc",
+    "fileSize": "1.19 KB",
+    "transitUri": "file:/data/nifi/input/ship_mode.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "b2e27267-2443-46be-a495-92cf4551dcdc"
+    }
+  },
+  {
+    "eventId": 1,
+    "eventTime": "11/17/2026 16:58:30.949 CET",
+    "eventType": "SEND",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "b2e27267-2443-46be-a495-92cf4551dcdc",
+    "fileSize": "1.19 KB",
+    "transitUri": "hdfs://namenode:8020/retail-lake/raw/nifi/ship_mode.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "b2e27267-2443-46be-a495-92cf4551dcdc"
+    }
+  },
+  {
+    "eventId": 2,
+    "eventTime": "11/17/2026 16:58:30.950 CET",
+    "eventType": "ATTRIBUTES_MODIFIED",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "b2e27267-2443-46be-a495-92cf4551dcdc",
+    "fileSize": "1.19 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "b2e27267-2443-46be-a495-92cf4551dcdc"
+    }
+  },
+  {
+    "eventId": 3,
+    "eventTime": "11/17/2026 16:58:30.950 CET",
+    "eventType": "DROP",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "b2e27267-2443-46be-a495-92cf4551dcdc",
+    "fileSize": "1.19 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "b2e27267-2443-46be-a495-92cf4551dcdc"
+    }
+  },
+  {
+    "eventId": 4,
+    "eventTime": "11/17/2026 17:21:08.944 CET",
+    "eventType": "RECEIVE",
+    "componentName": "GetFile_entree",
+    "flowFileUuid": "c6d141f3-0570-46a2-a336-7c5b8dd86f7a",
+    "fileSize": "1.19 KB",
+    "transitUri": "file:/data/nifi/input/ship_mode.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "c6d141f3-0570-46a2-a336-7c5b8dd86f7a"
+    }
+  },
+  {
+    "eventId": 5,
+    "eventTime": "11/17/2026 17:21:38.965 CET",
+    "eventType": "DROP",
+    "componentName": "LogAttribute_echec_depot",
+    "flowFileUuid": "c6d141f3-0570-46a2-a336-7c5b8dd86f7a",
+    "fileSize": "1.19 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "ship_mode.dat",
+      "path": "/",
+      "uuid": "c6d141f3-0570-46a2-a336-7c5b8dd86f7a"
+    }
+  },
+  {
+    "eventId": 6,
+    "eventTime": "11/17/2026 17:38:35.349 CET",
+    "eventType": "RECEIVE",
+    "componentName": "GetFile_entree",
+    "flowFileUuid": "55053830-5e54-45ff-bd0b-4176e829adb0",
+    "fileSize": "327 bytes",
+    "transitUri": "file:/data/nifi/input/income_band.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "income_band.dat",
+      "path": "/",
+      "uuid": "55053830-5e54-45ff-bd0b-4176e829adb0"
+    }
+  },
+  {
+    "eventId": 7,
+    "eventTime": "11/17/2026 17:38:35.389 CET",
+    "eventType": "SEND",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "55053830-5e54-45ff-bd0b-4176e829adb0",
+    "fileSize": "327 bytes",
+    "transitUri": "hdfs://namenode:8020/retail-lake/raw/nifi/income_band.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "income_band.dat",
+      "path": "/",
+      "uuid": "55053830-5e54-45ff-bd0b-4176e829adb0"
+    }
+  },
+  {
+    "eventId": 8,
+    "eventTime": "11/17/2026 17:38:35.389 CET",
+    "eventType": "ATTRIBUTES_MODIFIED",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "55053830-5e54-45ff-bd0b-4176e829adb0",
+    "fileSize": "327 bytes",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "income_band.dat",
+      "path": "/",
+      "uuid": "55053830-5e54-45ff-bd0b-4176e829adb0"
+    }
+  },
+  {
+    "eventId": 9,
+    "eventTime": "11/17/2026 17:38:35.389 CET",
+    "eventType": "DROP",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "55053830-5e54-45ff-bd0b-4176e829adb0",
+    "fileSize": "327 bytes",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "income_band.dat",
+      "path": "/",
+      "uuid": "55053830-5e54-45ff-bd0b-4176e829adb0"
+    }
+  },
+  {
+    "eventId": 10,
+    "eventTime": "11/17/2026 18:00:23.752 CET",
+    "eventType": "RECEIVE",
+    "componentName": "GetFile_entree",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": "file:/data/nifi/input/reason.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "path": "/",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  },
+  {
+    "eventId": 11,
+    "eventTime": "11/17/2026 18:00:23.766 CET",
+    "eventType": "RECEIVE",
+    "componentName": "GetFile_entree",
+    "flowFileUuid": "5368ea58-1847-4d6e-bbe0-741e369c7955",
+    "fileSize": "584 bytes",
+    "transitUri": "file:/data/nifi/input/warehouse.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "warehouse.dat",
+      "path": "/",
+      "uuid": "5368ea58-1847-4d6e-bbe0-741e369c7955"
+    }
+  },
+  {
+    "eventId": 12,
+    "eventTime": "11/17/2026 18:00:23.777 CET",
+    "eventType": "ATTRIBUTES_MODIFIED",
+    "componentName": "UpdateAttribute_suivi",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  },
+  {
+    "eventId": 13,
+    "eventTime": "11/17/2026 18:00:23.778 CET",
+    "eventType": "ATTRIBUTES_MODIFIED",
+    "componentName": "UpdateAttribute_suivi",
+    "flowFileUuid": "5368ea58-1847-4d6e-bbe0-741e369c7955",
+    "fileSize": "584 bytes",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "warehouse.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "5368ea58-1847-4d6e-bbe0-741e369c7955"
+    }
+  },
+  {
+    "eventId": 14,
+    "eventTime": "11/17/2026 18:00:23.787 CET",
+    "eventType": "ROUTE",
+    "componentName": "RouteOnAttribute_domaine",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  },
+  {
+    "eventId": 15,
+    "eventTime": "11/17/2026 18:00:23.788 CET",
+    "eventType": "ROUTE",
+    "componentName": "RouteOnAttribute_domaine",
+    "flowFileUuid": "5368ea58-1847-4d6e-bbe0-741e369c7955",
+    "fileSize": "584 bytes",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "warehouse.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "5368ea58-1847-4d6e-bbe0-741e369c7955"
+    }
+  },
+  {
+    "eventId": 16,
+    "eventTime": "11/17/2026 18:00:23.800 CET",
+    "eventType": "DROP",
+    "componentName": "LogAttribute_non_reconnu",
+    "flowFileUuid": "5368ea58-1847-4d6e-bbe0-741e369c7955",
+    "fileSize": "584 bytes",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "warehouse.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "5368ea58-1847-4d6e-bbe0-741e369c7955"
+    }
+  },
+  {
+    "eventId": 17,
+    "eventTime": "11/17/2026 18:00:23.821 CET",
+    "eventType": "SEND",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": "hdfs://namenode:8020/retail-lake/raw/nifi/reason.dat",
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  },
+  {
+    "eventId": 18,
+    "eventTime": "11/17/2026 18:00:23.821 CET",
+    "eventType": "ATTRIBUTES_MODIFIED",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  },
+  {
+    "eventId": 19,
+    "eventTime": "11/17/2026 18:00:23.821 CET",
+    "eventType": "DROP",
+    "componentName": "PutHDFS_raw_nifi",
+    "flowFileUuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73",
+    "fileSize": "3.03 KB",
+    "transitUri": null,
+    "attributs": {
+      "absolute.path": "/data/nifi/input/",
+      "filename": "reason.dat",
+      "jeu": "initial",
+      "path": "/",
+      "recu_par": "GetFile_entree",
+      "source": "tpcxbb",
+      "uuid": "297e89fb-2ebe-47c3-a459-3d0e6be97f73"
+    }
+  }
+]

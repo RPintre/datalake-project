@@ -1,0 +1,21 @@
+/retail-lake/                          Racine du Data Lake (propriétaire : hadoop, droits 755)
+|
++-- raw/                               Copie exacte des données reçues, jamais modifiée
+|   +-- tpcxbb/
+|   |   +-- initial/<table>/<fichier>      Jeu initial : 23 tables, 24 fichiers (977,0 Mio)
+|   |   +-- refresh/<table>/<fichier>      Jeu de rafraîchissement : 11 tables, 12 fichiers (9,1 Mio)
+|   +-- nifi/                              Destination réservée aux dépôts automatisés (propriétaire : nifi, droits 775)
+|
++-- bronze/
+|   +-- tpcxbb/                            Données organisées par table avec leurs métadonnées (zone créée, vide)
+|
++-- silver/                            Données typées, nettoyées et contrôlées (zone créée, vide)
++-- gold/                              Data marts prêts pour l'analyse (zone créée, vide)
+|
++-- quality/                           Contrôles qualité et inventaires
+|   +-- inventaire_fichiers_sources.csv    Inventaire des 36 fichiers (taille, lignes, colonnes, SHA-256)
+|
++-- logs/
+    +-- provenance/
+    |   +-- depot_manuel_uc03.csv          Journal de provenance du dépôt manuel (36 lignes)
+    +-- ingestion/                         Journaux des exécutions d'ingestion (répertoire créé, vide)

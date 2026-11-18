@@ -1,0 +1,17 @@
+== Heure de debut : 17/11/2026 14:56:06 (heure de Paris)
+== Depot du jeu refresh dans la zone Raw (hdfs dfs -put, sans ecrasement) == [17/11/2026 14:56:06]
+[17/11/2026 14:56:10] depose : /retail-lake/raw/tpcxbb/refresh/customer_address/customer_address.dat
+[17/11/2026 14:56:13] depose : /retail-lake/raw/tpcxbb/refresh/customer/customer.dat
+[17/11/2026 14:56:16] depose : /retail-lake/raw/tpcxbb/refresh/inventory/inventory.dat
+[17/11/2026 14:56:19] depose : /retail-lake/raw/tpcxbb/refresh/item/item.dat
+[17/11/2026 14:56:23] depose : /retail-lake/raw/tpcxbb/refresh/item_marketprices/item_marketprices_audit.csv
+[17/11/2026 14:56:26] depose : /retail-lake/raw/tpcxbb/refresh/item_marketprices/item_marketprices.dat
+[17/11/2026 14:56:29] depose : /retail-lake/raw/tpcxbb/refresh/product_reviews/product_reviews.dat
+[17/11/2026 14:56:32] depose : /retail-lake/raw/tpcxbb/refresh/store_returns/store_returns.dat
+[17/11/2026 14:56:35] depose : /retail-lake/raw/tpcxbb/refresh/store_sales/store_sales.dat
+[17/11/2026 14:56:39] depose : /retail-lake/raw/tpcxbb/refresh/web_clickstreams/web_clickstreams.dat
+[17/11/2026 14:56:42] depose : /retail-lake/raw/tpcxbb/refresh/web_returns/web_returns.dat
+[17/11/2026 14:56:45] depose : /retail-lake/raw/tpcxbb/refresh/web_sales/web_sales.dat
+9.1 M  9.1 M  /retail-lake/raw/tpcxbb/refresh
+
+== Heure de fin : 17/11/2026 14:56:46

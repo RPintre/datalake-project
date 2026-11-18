@@ -1,0 +1,13 @@
+== Heure de debut : 17/11/2026 16:44:16 (heure de Paris)
+Flux cree dans le groupe ea2e2c60-01a1-1000-7e87-67fbc52fb1cc
+GetFile_entree               type=GetFile       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+PutHDFS_raw_nifi             type=PutHDFS       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_echec_depot     type=LogAttribute  etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=0 arretes=3 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=0 arretes=3 invalides=0 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+== Heure de fin : 17/11/2026 16:44:18

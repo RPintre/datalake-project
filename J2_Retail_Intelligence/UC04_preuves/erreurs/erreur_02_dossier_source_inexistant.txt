@@ -1,0 +1,28 @@
+== Heure de debut : 17/11/2026 17:12:50 (heure de Paris)
+== Erreur controlee : Input Directory pointe vers un dossier qui n'existe pas ==
+Input Directory = /data/nifi/inexistant
+GetFile_entree               type=GetFile       etat=STOPPED   validation=INVALID
+    anomalie de validation : 'Input Directory' validated against '/data/nifi/inexistant' is invalid because Directory does not exist
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+PutHDFS_raw_nifi             type=PutHDFS       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_echec_depot     type=LogAttribute  etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=0 arretes=2 invalides=1 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=0 arretes=2 invalides=1 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+Dossier sur le disque : ls: cannot access '/data/nifi/inexistant': No such file or directory
+== Retablissement immediat de la configuration ==
+Input Directory = /data/nifi/input
+GetFile_entree               type=GetFile       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+PutHDFS_raw_nifi             type=PutHDFS       etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_echec_depot     type=LogAttribute  etat=STOPPED   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=0 arretes=3 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=0 arretes=3 invalides=0 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+== Heure de fin : 17/11/2026 17:12:52

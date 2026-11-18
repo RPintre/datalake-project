@@ -1,0 +1,50 @@
+== Heure de debut : 17/11/2026 18:03:45 (heure de Paris)
+Definition exportee : /sorties/nifi/flow_definition.json
+- PutHDFS_raw_nifi (PutHDFS) relations auto-terminees=['success']
+    Hadoop Configuration Resources = /opt/hadoop-conf/core-site.xml,/opt/hadoop-conf/hdfs-site.xml
+    Resource Transfer Source = FLOWFILE_CONTENT
+    Compression Codec = NONE
+    Writing Strategy = writeAndRename
+    Ignore Locality = false
+    Append Mode = DEFAULT
+    Directory = /retail-lake/raw/nifi
+    Conflict Resolution Strategy = fail
+- GetFile_entree (GetFile) relations auto-terminees=[]
+    Keep Source File = false
+    Minimum File Age = 0 sec
+    Polling Interval = 30 sec
+    Input Directory = /data/nifi/input
+    Batch Size = 10
+    Minimum File Size = 0 B
+    Ignore Hidden Files = true
+    Recurse Subdirectories = false
+    File Filter = [^\.].*
+- UpdateAttribute_suivi (UpdateAttribute) relations auto-terminees=[]
+    Store State = Do not store state
+    Cache Value Lookup Cache Size = 100
+    source = tpcxbb
+    jeu = initial
+    recu_par = GetFile_entree
+- RouteOnAttribute_domaine (RouteOnAttribute) relations auto-terminees=[]
+    Routing Strategy = Route to Property name
+    tables_reference = ${filename:startsWith('reason'):or(${filename:startsWith('ship_mode')}):or(${filename:startsWith('income_band')})}
+- LogAttribute_echec_depot (LogAttribute) relations auto-terminees=['success']
+    Log FlowFile Properties = true
+    Log Level = info
+    Output Format = Line per Attribute
+    Log Payload = false
+    Character Set = UTF-8
+    Attributes to Log Regular Expression = .*
+- LogAttribute_non_reconnu (LogAttribute) relations auto-terminees=['success']
+    Log FlowFile Properties = true
+    Log Level = info
+    Output Format = Line per Attribute
+    Log Payload = false
+    Character Set = UTF-8
+    Attributes to Log Regular Expression = .*
+- connexion ['failure'] : PutHDFS_raw_nifi -> LogAttribute_echec_depot
+- connexion ['success'] : UpdateAttribute_suivi -> RouteOnAttribute_domaine
+- connexion ['success'] : GetFile_entree -> UpdateAttribute_suivi
+- connexion ['unmatched'] : RouteOnAttribute_domaine -> LogAttribute_non_reconnu
+- connexion ['tables_reference'] : RouteOnAttribute_domaine -> PutHDFS_raw_nifi
+== Heure de fin : 17/11/2026 18:03:46

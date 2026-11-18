@@ -1,0 +1,48 @@
+== Heure de debut : 17/11/2026 15:19:40 (heure de Paris)
+== 5. Somme de controle SHA-256 : source et contenu relu depuis HDFS == [17/11/2026 15:19:40]
+15:19:42 initial  customer_address       customer_address.dat         bb31fb5678016474 bb31fb5678016474  identique
+15:19:44 initial  customer               customer.dat                 de44f7b0cf8f0457 de44f7b0cf8f0457  identique
+15:19:46 initial  customer_demographics  customer_demographics.dat    fd619e705edcf330 fd619e705edcf330  identique
+15:19:48 initial  date_dim               date_dim.dat                 325c892265c040d6 325c892265c040d6  identique
+15:19:50 initial  household_demographics household_demographics.dat   915aa15ea23e2bee 915aa15ea23e2bee  identique
+15:19:52 initial  income_band            income_band.dat              7d8b1e18b6367edb 7d8b1e18b6367edb  identique
+15:19:58 initial  inventory              inventory.dat                95d7d5f06fe59329 95d7d5f06fe59329  identique
+15:19:59 initial  item                   item.dat                     d8d4863009914b86 d8d4863009914b86  identique
+15:20:01 initial  item_marketprices      item_marketprices_audit.csv  3465c2360f4b5eb6 3465c2360f4b5eb6  identique
+15:20:03 initial  item_marketprices      item_marketprices.dat        f7575798bfe0ebb8 f7575798bfe0ebb8  identique
+15:20:05 initial  product_reviews        product_reviews.dat          ef1d5c78f8a3384c ef1d5c78f8a3384c  identique
+15:20:06 initial  promotion              promotion.dat                51885034be6f3d53 51885034be6f3d53  identique
+15:20:08 initial  reason                 reason.dat                   d5edc45cb1e76afd d5edc45cb1e76afd  identique
+15:20:10 initial  ship_mode              ship_mode.dat                8c48d71b318dbab1 8c48d71b318dbab1  identique
+15:20:11 initial  store_returns          store_returns.dat            7b80fbfbce4a065b 7b80fbfbce4a065b  identique
+15:20:14 initial  store_sales            store_sales.dat              7e0a7f16b4748374 7e0a7f16b4748374  identique
+15:20:16 initial  store                  store.dat                    a936bc38692bdddc a936bc38692bdddc  identique
+15:20:17 initial  time_dim               time_dim.dat                 10b9494b4f8ac000 10b9494b4f8ac000  identique
+15:20:19 initial  warehouse              warehouse.dat                16ae9bbc6b786acf 16ae9bbc6b786acf  identique
+15:20:22 initial  web_clickstreams       web_clickstreams.dat         da5e6e60121924f9 da5e6e60121924f9  identique
+15:20:24 initial  web_page               web_page.dat                 98a64599d41f4f0b 98a64599d41f4f0b  identique
+15:20:26 initial  web_returns            web_returns.dat              bacbe486660bce55 bacbe486660bce55  identique
+15:20:29 initial  web_sales              web_sales.dat                e9c5a08589977dd0 e9c5a08589977dd0  identique
+15:20:30 initial  web_site               web_site.dat                 79c0711ae46c63aa 79c0711ae46c63aa  identique
+15:20:32 refresh  customer_address       customer_address.dat         b777de89572b0106 b777de89572b0106  identique
+15:20:34 refresh  customer               customer.dat                 544f3d1893a5f487 544f3d1893a5f487  identique
+15:20:35 refresh  inventory              inventory.dat                05f3d9305e760bdc 05f3d9305e760bdc  identique
+15:20:37 refresh  item                   item.dat                     33d3b6ec6c1e3b7c 33d3b6ec6c1e3b7c  identique
+15:20:39 refresh  item_marketprices      item_marketprices_audit.csv  e944c9080ead4ccd e944c9080ead4ccd  identique
+15:20:40 refresh  item_marketprices      item_marketprices.dat        fb1538dd03ce3d8a fb1538dd03ce3d8a  identique
+15:20:42 refresh  product_reviews        product_reviews.dat          78c0de245f4c85c6 78c0de245f4c85c6  identique
+15:20:43 refresh  store_returns          store_returns.dat            6644a1b17fcc3ca1 6644a1b17fcc3ca1  identique
+15:20:45 refresh  store_sales            store_sales.dat              3c71c010a17d15c9 3c71c010a17d15c9  identique
+15:20:47 refresh  web_clickstreams       web_clickstreams.dat         d0834c9542533b73 d0834c9542533b73  identique
+15:20:48 refresh  web_returns            web_returns.dat              338ddd0c1453dcae 338ddd0c1453dcae  identique
+15:20:50 refresh  web_sales              web_sales.dat                680d0ed18bd2039b 680d0ed18bd2039b  identique
+fichiers identiques : 36 ; differents : 0
+
+== 6. Recuperation controlee (hdfs dfs -get) puis comparaison binaire avec la source == [17/11/2026 15:20:50]
+cmp : fichier recupere identique a la source
+
+== 7. Somme de controle native HDFS (hdfs dfs -checksum) == [17/11/2026 15:20:56]
+/retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat	MD5-of-0MD5-of-512CRC32C	000002000000000000000000cb3d39d54ed8213ba08dfa4be2768183
+/retail-lake/raw/tpcxbb/initial/item/item.dat	MD5-of-0MD5-of-512CRC32C	00000200000000000000000037c4a2d56b2da2ffec78c0cc66d081ec
+
+== Heure de fin : 17/11/2026 15:20:59

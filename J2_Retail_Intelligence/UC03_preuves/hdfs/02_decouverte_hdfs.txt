@@ -1,0 +1,37 @@
+== Heure de debut : 17/11/2026 14:10:41 (heure de Paris)
+utilisateur du client : hadoop
+
+[17/11/2026 14:10:41] $ hdfs dfs -ls /
+(code retour : 0)
+
+[17/11/2026 14:10:43] $ hdfs dfs -mkdir -p /retail-lake
+(code retour : 0)
+
+[17/11/2026 14:10:45] $ hdfs dfs -ls /
+Found 1 items
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:10 /retail-lake
+(code retour : 0)
+
+[17/11/2026 14:10:46] $ hdfs dfs -ls /retail-lake
+(code retour : 0)
+
+[17/11/2026 14:10:48] $ hdfs dfs -ls -d / /retail-lake
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:10 /
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:10 /retail-lake
+(code retour : 0)
+
+[17/11/2026 14:10:49] $ hdfs dfs -du -h /retail-lake
+(code retour : 0)
+
+[17/11/2026 14:10:51] $ hdfs dfs -df -h /
+Filesystem                Size  Used  Available  Use%
+hdfs://namenode:8020  1006.9 G  36 K    945.0 G    0%
+(code retour : 0)
+
+== Erreur volontaire et sans risque : lecture d'un repertoire qui n'existe pas ==
+
+[17/11/2026 14:10:52] $ hdfs dfs -ls /repertoire-inexistant
+ls: `/repertoire-inexistant': No such file or directory
+(code retour : 1)
+
+== Heure de fin : 17/11/2026 14:10:54

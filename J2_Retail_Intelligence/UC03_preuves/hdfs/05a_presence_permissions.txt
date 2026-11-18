@@ -1,0 +1,26 @@
+== Heure de debut : 17/11/2026 15:07:22 (heure de Paris)
+== 1. Presence des repertoires attendus == [17/11/2026 15:07:22]
+present : /retail-lake/raw/tpcxbb/initial
+present : /retail-lake/raw/tpcxbb/refresh
+present : /retail-lake/raw/nifi
+present : /retail-lake/bronze/tpcxbb
+present : /retail-lake/silver
+present : /retail-lake/gold
+present : /retail-lake/quality
+present : /retail-lake/logs/provenance
+present : /retail-lake/logs/ingestion
+
+== 2. Permissions de la zone Raw == [17/11/2026 15:07:36]
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw/tpcxbb
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:48 /retail-lake/raw/tpcxbb/initial
+drwxrwxr-x   - nifi   supergroup          0 2026-11-17 14:31 /retail-lake/raw/nifi
+Found 1 items
+-rw-r--r--   1 hadoop supergroup   92764700 2026-11-17 14:47 /retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat
+
+== 3. Lecture controlee : 2 premieres lignes de store_sales dans HDFS == [17/11/2026 15:07:39]
+36890|71480|10001|44404|493944|2898|44093|10|294|0|31|18.00|30.78|23.08|238.70|715.48|558.00|954.18|21.46|0.00|715.48|736.94|157.48
+36890|71480|10000|44404|493944|2898|44093|10|279|0|54|99.21|148.82|83.34|3535.92|4500.36|5357.34|8036.28|225.02|0.00|4500.36|4725.38|-856.98
+
+== Heure de fin : 17/11/2026 15:07:41

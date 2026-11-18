@@ -1,0 +1,14 @@
+== Heure de debut : 17/11/2026 18:25:27 (heure de Paris)
+== Diagnostic : le processeur PutHDFS est-il present dans l'image officielle de NiFi 2.12.0 ? ==
+Conteneur d'essai jetable, cree a partir de l'image officielle sans aucun fichier ajoute (aucun volume, reseau coupe).
+
+[17/11/2026 18:25:27] docker run apache/nifi:2.12.0 : recherche d'archives Hadoop dans lib/
+archives dont le nom contient hadoop ou hdfs : 0
+archives NAR de l'image : 119
+Constat : l'image ne contient aucune archive Hadoop, donc pas de processeur PutHDFS.
+
+== Archives officielles ajoutees (Apache NiFi 2.12.0, Maven Central) : somme SHA-1 verifiee ==
+nifi-hadoop-nar : 16855536 octets ; SHA-1 publie f71aecb8e05e31b12d578786fdd1b826eea73a7f ; calcule f71aecb8e05e31b12d578786fdd1b826eea73a7f ; CONFORME
+nifi-hadoop-libraries-nar : 59465063 octets ; SHA-1 publie 5df53cf9fed012a6d821a8450cbd46d8d236d0ee ; calcule 5df53cf9fed012a6d821a8450cbd46d8d236d0ee ; CONFORME
+Les deux archives sont montees dans /opt/nifi/nifi-current/nar_extensions (docker-compose.yml) : PutHDFS devient disponible (voir 11_decouverte_nifi.txt).
+== Heure de fin : 17/11/2026 18:25:28

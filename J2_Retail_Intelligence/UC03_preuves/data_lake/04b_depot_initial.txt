@@ -1,0 +1,29 @@
+== Heure de debut : 17/11/2026 14:46:25 (heure de Paris)
+== Depot du jeu initial dans la zone Raw (hdfs dfs -put, sans ecrasement) == [17/11/2026 14:46:25]
+[17/11/2026 14:46:29] depose : /retail-lake/raw/tpcxbb/initial/customer_address/customer_address.dat
+[17/11/2026 14:46:33] depose : /retail-lake/raw/tpcxbb/initial/customer/customer.dat
+[17/11/2026 14:46:39] depose : /retail-lake/raw/tpcxbb/initial/customer_demographics/customer_demographics.dat
+[17/11/2026 14:46:43] depose : /retail-lake/raw/tpcxbb/initial/date_dim/date_dim.dat
+[17/11/2026 14:46:46] depose : /retail-lake/raw/tpcxbb/initial/household_demographics/household_demographics.dat
+[17/11/2026 14:46:50] depose : /retail-lake/raw/tpcxbb/initial/income_band/income_band.dat
+[17/11/2026 14:47:12] depose : /retail-lake/raw/tpcxbb/initial/inventory/inventory.dat
+[17/11/2026 14:47:15] depose : /retail-lake/raw/tpcxbb/initial/item/item.dat
+[17/11/2026 14:47:19] depose : /retail-lake/raw/tpcxbb/initial/item_marketprices/item_marketprices_audit.csv
+[17/11/2026 14:47:22] depose : /retail-lake/raw/tpcxbb/initial/item_marketprices/item_marketprices.dat
+[17/11/2026 14:47:28] depose : /retail-lake/raw/tpcxbb/initial/product_reviews/product_reviews.dat
+[17/11/2026 14:47:31] depose : /retail-lake/raw/tpcxbb/initial/promotion/promotion.dat
+[17/11/2026 14:47:34] depose : /retail-lake/raw/tpcxbb/initial/reason/reason.dat
+[17/11/2026 14:47:37] depose : /retail-lake/raw/tpcxbb/initial/ship_mode/ship_mode.dat
+[17/11/2026 14:47:41] depose : /retail-lake/raw/tpcxbb/initial/store_returns/store_returns.dat
+[17/11/2026 14:47:48] depose : /retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat
+[17/11/2026 14:47:51] depose : /retail-lake/raw/tpcxbb/initial/store/store.dat
+[17/11/2026 14:47:55] depose : /retail-lake/raw/tpcxbb/initial/time_dim/time_dim.dat
+[17/11/2026 14:47:58] depose : /retail-lake/raw/tpcxbb/initial/warehouse/warehouse.dat
+[17/11/2026 14:48:09] depose : /retail-lake/raw/tpcxbb/initial/web_clickstreams/web_clickstreams.dat
+[17/11/2026 14:48:12] depose : /retail-lake/raw/tpcxbb/initial/web_page/web_page.dat
+[17/11/2026 14:48:16] depose : /retail-lake/raw/tpcxbb/initial/web_returns/web_returns.dat
+[17/11/2026 14:48:25] depose : /retail-lake/raw/tpcxbb/initial/web_sales/web_sales.dat
+[17/11/2026 14:48:28] depose : /retail-lake/raw/tpcxbb/initial/web_site/web_site.dat
+977.0 M  977.0 M  /retail-lake/raw/tpcxbb/initial
+
+== Heure de fin : 17/11/2026 14:48:30

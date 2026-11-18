@@ -1,0 +1,43 @@
+== Heure de debut : 17/11/2026 15:01:42 (heure de Paris)
+== Contenu de la zone Raw apres le depot == [17/11/2026 15:01:42]
+-rw-r--r-- hadoop  supergroup     13279063 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/customer/customer.dat
+-rw-r--r-- hadoop  supergroup      5387229 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/customer_address/customer_address.dat
+-rw-r--r-- hadoop  supergroup     77753083 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/customer_demographics/customer_demographics.dat
+-rw-r--r-- hadoop  supergroup     15395800 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/date_dim/date_dim.dat
+-rw-r--r-- hadoop  supergroup       155100 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/household_demographics/household_demographics.dat
+-rw-r--r-- hadoop  supergroup          327 octets  2026-11-17 14:46  /retail-lake/raw/tpcxbb/initial/income_band/income_band.dat
+-rw-r--r-- hadoop  supergroup    424943678 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/inventory/inventory.dat
+-rw-r--r-- hadoop  supergroup      6799286 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/item/item.dat
+-rw-r--r-- hadoop  supergroup      4201170 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/item_marketprices/item_marketprices.dat
+-rw-r--r-- hadoop  supergroup          273 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/item_marketprices/item_marketprices_audit.csv
+-rw-r--r-- hadoop  supergroup     56355389 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/product_reviews/product_reviews.dat
+-rw-r--r-- hadoop  supergroup        46396 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/promotion/promotion.dat
+-rw-r--r-- hadoop  supergroup         3105 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/reason/reason.dat
+-rw-r--r-- hadoop  supergroup         1220 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/ship_mode/ship_mode.dat
+-rw-r--r-- hadoop  supergroup         3386 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/store/store.dat
+-rw-r--r-- hadoop  supergroup      4337400 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/store_returns/store_returns.dat
+-rw-r--r-- hadoop  supergroup     92764700 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat
+-rw-r--r-- hadoop  supergroup      5107780 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/time_dim/time_dim.dat
+-rw-r--r-- hadoop  supergroup          584 octets  2026-11-17 14:47  /retail-lake/raw/tpcxbb/initial/warehouse/warehouse.dat
+-rw-r--r-- hadoop  supergroup    178722140 octets  2026-11-17 14:48  /retail-lake/raw/tpcxbb/initial/web_clickstreams/web_clickstreams.dat
+-rw-r--r-- hadoop  supergroup         8040 octets  2026-11-17 14:48  /retail-lake/raw/tpcxbb/initial/web_page/web_page.dat
+-rw-r--r-- hadoop  supergroup      5383513 octets  2026-11-17 14:48  /retail-lake/raw/tpcxbb/initial/web_returns/web_returns.dat
+-rw-r--r-- hadoop  supergroup    133790574 octets  2026-11-17 14:48  /retail-lake/raw/tpcxbb/initial/web_sales/web_sales.dat
+-rw-r--r-- hadoop  supergroup         8838 octets  2026-11-17 14:48  /retail-lake/raw/tpcxbb/initial/web_site/web_site.dat
+-rw-r--r-- hadoop  supergroup       134360 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/customer/customer.dat
+-rw-r--r-- hadoop  supergroup        54587 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/customer_address/customer_address.dat
+-rw-r--r-- hadoop  supergroup      4292915 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/inventory/inventory.dat
+-rw-r--r-- hadoop  supergroup        69173 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/item/item.dat
+-rw-r--r-- hadoop  supergroup        42547 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/item_marketprices/item_marketprices.dat
+-rw-r--r-- hadoop  supergroup       151009 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/item_marketprices/item_marketprices_audit.csv
+-rw-r--r-- hadoop  supergroup       573685 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/product_reviews/product_reviews.dat
+-rw-r--r-- hadoop  supergroup        48825 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/store_returns/store_returns.dat
+-rw-r--r-- hadoop  supergroup       922171 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/store_sales/store_sales.dat
+-rw-r--r-- hadoop  supergroup      1821864 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/web_clickstreams/web_clickstreams.dat
+-rw-r--r-- hadoop  supergroup        55952 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/web_returns/web_returns.dat
+-rw-r--r-- hadoop  supergroup      1378425 octets  2026-11-17 14:56  /retail-lake/raw/tpcxbb/refresh/web_sales/web_sales.dat
+
+977.0 M  977.0 M  /retail-lake/raw/tpcxbb/initial
+9.1 M    9.1 M    /retail-lake/raw/tpcxbb/refresh
+
+== Heure de fin : 17/11/2026 15:01:46

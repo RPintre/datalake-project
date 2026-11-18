@@ -1,0 +1,30 @@
+== Heure de debut : 17/11/2026 14:31:16 (heure de Paris)
+== 1. Creation des zones == [17/11/2026 14:31:16]
+cree : /retail-lake/raw/tpcxbb/initial
+cree : /retail-lake/raw/tpcxbb/refresh
+cree : /retail-lake/raw/nifi
+cree : /retail-lake/bronze/tpcxbb
+cree : /retail-lake/silver
+cree : /retail-lake/gold
+cree : /retail-lake/quality
+cree : /retail-lake/logs/provenance
+cree : /retail-lake/logs/ingestion
+
+== 2. Permissions == [17/11/2026 14:31:29]
+
+== 3. Arborescence obtenue == [17/11/2026 14:31:34]
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/bronze
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/bronze/tpcxbb
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/gold
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/logs
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/logs/ingestion
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/logs/provenance
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/quality
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw
+drwxrwxr-x   - nifi   supergroup          0 2026-11-17 14:31 /retail-lake/raw/nifi
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw/tpcxbb
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw/tpcxbb/initial
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/raw/tpcxbb/refresh
+drwxr-xr-x   - hadoop supergroup          0 2026-11-17 14:31 /retail-lake/silver
+
+== Heure de fin : 17/11/2026 14:31:35

@@ -1,0 +1,34 @@
+== Heure de debut : 17/11/2026 17:38:34 (heure de Paris)
+== Second depot par le flux : income_band.dat (nouveau nom, aucun conflit) ==
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=1 octets lus=327 octets ecrits=327 taches=5
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=327 octets ecrits=0 taches=1
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=3 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=3 arretes=0 invalides=0 desactives=0
+connexion PutHDFS_raw_nifi -> LogAttribute_echec_depot ['failure'] : file d'attente = 0 (0 bytes)
+connexion GetFile_entree -> PutHDFS_raw_nifi ['success'] : file d'attente = 0 (0 bytes)
+== Verification dans HDFS ==
+== Heure de debut : 17/11/2026 17:39:22 (heure de Paris)
+== 1. Destination HDFS du flux NiFi == [17/11/2026 17:39:22]
+Found 2 items
+-rw-r--r--   1 nifi supergroup        327 2026-11-17 17:38 /retail-lake/raw/nifi/income_band.dat
+-rw-r--r--   1 nifi supergroup      1.2 K 2026-11-17 16:58 /retail-lake/raw/nifi/ship_mode.dat
+327    327    /retail-lake/raw/nifi/income_band.dat
+1.2 K  1.2 K  /retail-lake/raw/nifi/ship_mode.dat
+
+== 2. Comparaison SHA-256 : depot NiFi, depot manuel (UC-03) et source == [17/11/2026 17:39:25]
+fichier        nifi               manuel_uc03        source             statut
+ship_mode.dat  8c48d71b318dbab1   8c48d71b318dbab1   8c48d71b318dbab1   identiques
+income_band.dat 7d8b1e18b6367edb   7d8b1e18b6367edb   7d8b1e18b6367edb   identiques
+
+== 3. Dossier d'entree de NiFi (GetFile, Keep Source File = false) == [17/11/2026 17:39:31]
+fichiers restants : 0
+== 4. Sources originales conservees == [17/11/2026 17:39:31]
+-rwxrwxrwx 1 root root  327 Nov 15 23:35 /donnees/data/income_band/income_band.dat
+-rwxrwxrwx 1 root root 1220 Nov 15 23:36 /donnees/data/ship_mode/ship_mode.dat
+
+== Heure de fin : 17/11/2026 17:39:31
+== Heure de fin : 17/11/2026 17:39:31

@@ -1,0 +1,43 @@
+== Heure de debut : 17/11/2026 14:39:51 (heure de Paris)
+== Inventaire prealable (avant tout depot) == [17/11/2026 14:39:51]
+fichiers inventories : 36 ; inventaire ecrit dans /sorties/inventaire_fichiers.csv
+jeu           table                  fichier                        taille_octets    lignes colonnes  sha256
+data          customer_address       customer_address.dat                5387229     49500       13  bb31fb5678016474
+data          customer               customer.dat                       13279063     99000       18  de44f7b0cf8f0457
+data          customer_demographics  customer_demographics.dat          77753083   1920800        9  fd619e705edcf330
+data          date_dim               date_dim.dat                       15395800    109573       28  325c892265c040d6
+data          household_demographics household_demographics.dat           155100      7200        5  915aa15ea23e2bee
+data          income_band            income_band.dat                         327        20        3  7d8b1e18b6367edb
+data          inventory              inventory.dat                     424943678  23255100        4  95d7d5f06fe59329
+data          item                   item.dat                            6799286     17820       22  d8d4863009914b86
+data          item_marketprices      item_marketprices_audit.csv             273         5        8  3465c2360f4b5eb6
+data          item_marketprices      item_marketprices.dat               4201170     89100        6  f7575798bfe0ebb8
+data          product_reviews        product_reviews.dat                56355389     89991        8  ef1d5c78f8a3384c
+data          promotion              promotion.dat                         46396       300       19  51885034be6f3d53
+data          reason                 reason.dat                             3105        35        3  d5edc45cb1e76afd
+data          ship_mode              ship_mode.dat                          1220        20        6  8c48d71b318dbab1
+data          store_returns          store_returns.dat                   4337400     37902       20  7b80fbfbce4a065b
+data          store_sales            store_sales.dat                    92764700    667579       23  7e0a7f16b4748374
+data          store                  store.dat                              3386        12       29  a936bc38692bdddc
+data          time_dim               time_dim.dat                        5107780     86400       10  10b9494b4f8ac000
+data          warehouse              warehouse.dat                           584         5       14  16ae9bbc6b786acf
+data          web_clickstreams       web_clickstreams.dat              178722140   6770550        6  da5e6e60121924f9
+data          web_page               web_page.dat                           8040        60       14  98a64599d41f4f0b
+data          web_returns            web_returns.dat                     5383513     38487       24  bacbe486660bce55
+data          web_sales              web_sales.dat                     133790574    668052       34  e9c5a08589977dd0
+data          web_site               web_site.dat                           8838        30       26  79c0711ae46c63aa
+data_refresh  customer_address       customer_address.dat                  54587       500       13  b777de89572b0106
+data_refresh  customer               customer.dat                         134360      1000       18  544f3d1893a5f487
+data_refresh  inventory              inventory.dat                       4292915    234900        4  05f3d9305e760bdc
+data_refresh  item                   item.dat                              69173       180       22  33d3b6ec6c1e3b7c
+data_refresh  item_marketprices      item_marketprices_audit.csv          151009     17986        8  e944c9080ead4ccd
+data_refresh  item_marketprices      item_marketprices.dat                 42547       900        6  fb1538dd03ce3d8a
+data_refresh  product_reviews        product_reviews.dat                  573685       909        8  78c0de245f4c85c6
+data_refresh  store_returns          store_returns.dat                     48825       426       20  6644a1b17fcc3ca1
+data_refresh  store_sales            store_sales.dat                      922171      6632       23  3c71c010a17d15c9
+data_refresh  web_clickstreams       web_clickstreams.dat                1821864     68988        6  d0834c9542533b73
+data_refresh  web_returns            web_returns.dat                       55952       400       24  338ddd0c1453dcae
+data_refresh  web_sales              web_sales.dat                       1378425      6879       34  680d0ed18bd2039b
+copie dans HDFS : /retail-lake/quality/inventaire_fichiers_sources.csv
+
+== Heure de fin : 17/11/2026 14:40:14

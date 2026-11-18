@@ -1,0 +1,24 @@
+== Heure de debut : 17/11/2026 18:07:10 (heure de Paris)
+  id type     composant                  fichier            octets  heure
+   0 RECEIVE  GetFile_entree             ship_mode.dat     1.19 KB  11/17/2026 16:58:30.232 CET
+   1 SEND     PutHDFS_raw_nifi           ship_mode.dat     1.19 KB  11/17/2026 16:58:30.949 CET
+   2 ATTRIBUTES_MODIFIED PutHDFS_raw_nifi           ship_mode.dat     1.19 KB  11/17/2026 16:58:30.950 CET
+   3 DROP     PutHDFS_raw_nifi           ship_mode.dat     1.19 KB  11/17/2026 16:58:30.950 CET
+   4 RECEIVE  GetFile_entree             ship_mode.dat     1.19 KB  11/17/2026 17:21:08.944 CET
+   5 DROP     LogAttribute_echec_depot   ship_mode.dat     1.19 KB  11/17/2026 17:21:38.965 CET
+   6 RECEIVE  GetFile_entree             income_band.dat  327 bytes  11/17/2026 17:38:35.349 CET
+   7 SEND     PutHDFS_raw_nifi           income_band.dat  327 bytes  11/17/2026 17:38:35.389 CET
+   8 ATTRIBUTES_MODIFIED PutHDFS_raw_nifi           income_band.dat  327 bytes  11/17/2026 17:38:35.389 CET
+   9 DROP     PutHDFS_raw_nifi           income_band.dat  327 bytes  11/17/2026 17:38:35.389 CET
+  10 RECEIVE  GetFile_entree             reason.dat        3.03 KB  11/17/2026 18:00:23.752 CET
+  11 RECEIVE  GetFile_entree             warehouse.dat    584 bytes  11/17/2026 18:00:23.766 CET
+  12 ATTRIBUTES_MODIFIED UpdateAttribute_suivi      reason.dat        3.03 KB  11/17/2026 18:00:23.777 CET
+  13 ATTRIBUTES_MODIFIED UpdateAttribute_suivi      warehouse.dat    584 bytes  11/17/2026 18:00:23.778 CET
+  14 ROUTE    RouteOnAttribute_domaine   reason.dat        3.03 KB  11/17/2026 18:00:23.787 CET
+  15 ROUTE    RouteOnAttribute_domaine   warehouse.dat    584 bytes  11/17/2026 18:00:23.788 CET
+  16 DROP     LogAttribute_non_reconnu   warehouse.dat    584 bytes  11/17/2026 18:00:23.800 CET
+  17 SEND     PutHDFS_raw_nifi           reason.dat        3.03 KB  11/17/2026 18:00:23.821 CET
+  18 ATTRIBUTES_MODIFIED PutHDFS_raw_nifi           reason.dat        3.03 KB  11/17/2026 18:00:23.821 CET
+  19 DROP     PutHDFS_raw_nifi           reason.dat        3.03 KB  11/17/2026 18:00:23.821 CET
+uuid FlowFile : ['297e89fb-2ebe-47c3-a459-3d0e6be97f73', '5368ea58-1847-4d6e-bbe0-741e369c7955', '55053830-5e54-45ff-bd0b-4176e829adb0', 'b2e27267-2443-46be-a495-92cf4551dcdc', 'c6d141f3-0570-46a2-a336-7c5b8dd86f7a']
+== Heure de fin : 17/11/2026 18:07:11

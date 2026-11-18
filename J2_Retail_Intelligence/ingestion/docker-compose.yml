@@ -1,0 +1,128 @@
+# Environnement du Jour 2 : HDFS (Hadoop 3.5.0) et Apache NiFi 2.12.0 dans des conteneurs Docker (Linux).
+# Lancement : docker compose up -d      Arret : docker compose stop      (HDFS conserve ses donnees dans des volumes ;
+# NiFi conserve son flux et sa provenance dans son conteneur tant que celui-ci n'est pas supprime)
+# Ne jamais utiliser `docker compose down -v` ni `docker compose down` : cela supprimerait les volumes ou le conteneur NiFi.
+services:
+  # Etape d'initialisation : donne les volumes HDFS a l'utilisateur `hadoop` de l'image, puis se termine.
+  init-volumes:
+    image: apache/hadoop:3.5.0
+    container_name: init-volumes
+    user: root
+    command: ["bash", "-c", "chown -R hadoop:hadoop /tmp/hadoop-hadoop/dfs/name /tmp/hadoop-hadoop/dfs/data"]
+    volumes:
+      - namenode-data:/tmp/hadoop-hadoop/dfs/name
+      - datanode-data:/tmp/hadoop-hadoop/dfs/data
+
+  # Formatage du NameNode : uniquement si le volume est vide, jamais sur un espace existant.
+  format-namenode:
+    image: apache/hadoop:3.5.0
+    container_name: format-namenode
+    command: ["bash", "-c", "if [ -d /tmp/hadoop-hadoop/dfs/name/current ]; then echo 'NameNode deja formate : aucune action'; else hdfs namenode -format -nonInteractive; fi"]
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - namenode-data:/tmp/hadoop-hadoop/dfs/name
+    depends_on:
+      init-volumes:
+        condition: service_completed_successfully
+
+  namenode:
+    image: apache/hadoop:3.5.0
+    container_name: namenode
+    hostname: namenode
+    command: ["hdfs", "namenode"]
+    ports:
+      - "127.0.0.1:9870:9870"
+    env_file:
+      - ./hadoop.env
+    environment:
+      TZ: "Europe/Paris"   # meme fuseau que le poste : toutes les heures des preuves sont en heure de Paris
+    volumes:
+      - namenode-data:/tmp/hadoop-hadoop/dfs/name
+    depends_on:
+      format-namenode:
+        condition: service_completed_successfully
+
+  datanode:
+    image: apache/hadoop:3.5.0
+    container_name: datanode
+    hostname: datanode
+    command: ["hdfs", "datanode"]
+    env_file:
+      - ./hadoop.env
+    environment:
+      TZ: "Europe/Paris"
+    volumes:
+      - datanode-data:/tmp/hadoop-hadoop/dfs/data
+    depends_on:
+      init-volumes:
+        condition: service_completed_successfully
+      namenode:
+        condition: service_started
+
+  # Conteneur client : execute les commandes `hdfs dfs`. Les donnees sources sont montees en lecture seule.
+  hdfs-client:
+    image: apache/hadoop:3.5.0
+    container_name: hdfs-client
+    command: ["sleep", "infinity"]
+    env_file:
+      - ./hadoop.env
+    environment:
+      TZ: "Europe/Paris"
+    volumes:
+      - ${DATA_DIR:-D:/code/datalake/retail_project}:/donnees:ro
+      - ./scripts:/scripts:ro
+      - ./sorties:/sorties
+      - ./nifi_data:/data/nifi
+    depends_on:
+      - namenode
+      - datanode
+
+  nifi:
+    image: apache/nifi:2.12.0
+    container_name: nifi
+    hostname: nifi
+    ports:
+      - "127.0.0.1:8443:8443"
+    environment:
+      # Interface en HTTPS ; l'identifiant et le mot de passe sont generes par NiFi au demarrage de l instance
+      # (a relever dans les journaux : docker logs nifi | grep Generated). Aucun secret n'est stocke dans ce fichier.
+      NIFI_WEB_PROXY_HOST: "localhost:8443"
+      TZ: "Europe/Paris"   # meme fuseau que le poste : horloge et evenements de provenance en heure de Paris
+    volumes:
+      - ./nifi_data:/data/nifi
+      - ./nifi/conf-hadoop:/opt/hadoop-conf:ro
+      # Archives officielles Apache NiFi 2.12.0 (nifi-hadoop-nar et nifi-hadoop-libraries-nar), absentes de l'image :
+      # elles fournissent PutHDFS. Telechargees depuis Maven Central, SHA-1 verifie (voir README).
+      - ./nifi/extensions/nifi-hadoop-nar-2.12.0.nar:/opt/nifi/nifi-current/nar_extensions/nifi-hadoop-nar-2.12.0.nar:ro
+      - ./nifi/extensions/nifi-hadoop-libraries-nar-2.12.0.nar:/opt/nifi/nifi-current/nar_extensions/nifi-hadoop-libraries-nar-2.12.0.nar:ro
+      # Etat de NiFi (flux, provenance, journaux) dans des volumes dont le nom change a chaque demarrage
+      # (variable NIFI_RUN) : chaque demarrage repart d'une instance vierge, sans supprimer aucun volume existant.
+      - nifi-conf:/opt/nifi/nifi-current/conf
+      - nifi-state:/opt/nifi/nifi-current/state
+      - nifi-provenance:/opt/nifi/nifi-current/provenance_repository
+      - nifi-flowfile:/opt/nifi/nifi-current/flowfile_repository
+      - nifi-content:/opt/nifi/nifi-current/content_repository
+      - nifi-database:/opt/nifi/nifi-current/database_repository
+      - nifi-logs:/opt/nifi/nifi-current/logs
+    depends_on:
+      - namenode
+      - datanode
+
+volumes:
+  namenode-data:
+  datanode-data:
+  nifi-conf:
+    name: nifi-conf-${NIFI_RUN:-0}
+  nifi-state:
+    name: nifi-state-${NIFI_RUN:-0}
+  nifi-provenance:
+    name: nifi-provenance-${NIFI_RUN:-0}
+  nifi-flowfile:
+    name: nifi-flowfile-${NIFI_RUN:-0}
+  nifi-content:
+    name: nifi-content-${NIFI_RUN:-0}
+  nifi-database:
+    name: nifi-database-${NIFI_RUN:-0}
+  nifi-logs:
+    name: nifi-logs-${NIFI_RUN:-0}

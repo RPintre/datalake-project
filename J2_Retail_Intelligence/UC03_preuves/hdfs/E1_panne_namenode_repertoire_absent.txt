@@ -1,0 +1,10 @@
+== Heure de debut : 17/11/2026 14:02:20 (heure de Paris)
+== Reproduction de la panne 1 : NameNode demarre dans un conteneur neuf, sans repertoire de donnees accessible ==
+Conteneur d'essai separe (reseau coupe, aucun port publie) : le NameNode en service n'est pas touche.
+[17/11/2026 14:02:20] docker run apache/hadoop:3.5.0 hdfs namenode
+org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-hadoop/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-hadoop/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+[17/11/2026 14:02:24] code retour : 1
+Cause : l'image 3.5.0 execute HDFS avec l'utilisateur hadoop ; son repertoire de donnees /tmp/hadoop-hadoop/dfs/name n'existe pas (ou n'est pas accessible) dans un conteneur neuf.
+Correction : volumes de donnees montes sous /tmp/hadoop-hadoop et rendus a l'utilisateur hadoop par l'etape init-volumes du docker-compose.yml.
+== Heure de fin : 17/11/2026 14:02:24

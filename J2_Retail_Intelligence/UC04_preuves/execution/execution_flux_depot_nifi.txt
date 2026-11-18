@@ -1,0 +1,30 @@
+== Heure de debut : 17/11/2026 16:58:29 (heure de Paris)
+== Premier depot par le flux : ship_mode.dat ==
+Fichier place dans /data/nifi/input : ship_mode.dat
+-- demarrage du flux (PutHDFS et LogAttribute d'abord, GetFile ensuite)
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=1 octets lus=1220 octets ecrits=1220 taches=1
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=1220 octets ecrits=0 taches=1
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=3 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=3 arretes=0 invalides=0 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+-- etat apres 45 s
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=1 octets lus=1220 octets ecrits=1220 taches=5
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=1220 octets ecrits=0 taches=1
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+groupe UC04_ingestion_raw_nifi : en marche=3 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=3 arretes=0 invalides=0 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+-- arret du flux
+Dossier d'entree : 0 fichier(s) restant(s)
+Found 1 items
+-rw-r--r--   1 nifi supergroup      1.2 K 2026-11-17 16:58 /retail-lake/raw/nifi/ship_mode.dat
+== Heure de fin : 17/11/2026 16:59:19

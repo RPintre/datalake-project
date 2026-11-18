@@ -1,0 +1,38 @@
+== Heure de debut : 17/11/2026 18:00:22 (heure de Paris)
+== Test du flux enrichi : reason.dat (table de reference, route vers PutHDFS) et warehouse.dat (non reconnu, route vers LogAttribute) ==
+Fichiers places dans /data/nifi/input : reason.dat, warehouse.dat
+-- etat apres le traitement
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=2 octets lus=3689 octets ecrits=3689 taches=5
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=3105 octets ecrits=0 taches=1
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+UpdateAttribute_suivi        type=UpdateAttribute etat=RUNNING   validation=VALID
+    FlowFiles entres=2 sortis=2 octets lus=0 octets ecrits=0 taches=2
+RouteOnAttribute_domaine     type=RouteOnAttribute etat=RUNNING   validation=VALID
+    FlowFiles entres=2 sortis=2 octets lus=0 octets ecrits=0 taches=2
+LogAttribute_non_reconnu     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=0 octets ecrits=0 taches=1
+groupe UC04_ingestion_raw_nifi : en marche=6 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=6 arretes=0 invalides=0 desactives=0
+connexion PutHDFS_raw_nifi -> LogAttribute_echec_depot ['failure'] : file d'attente = 0 (0 bytes)
+connexion GetFile_entree -> UpdateAttribute_suivi ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> LogAttribute_non_reconnu ['unmatched'] : file d'attente = 0 (0 bytes)
+connexion UpdateAttribute_suivi -> RouteOnAttribute_domaine ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> PutHDFS_raw_nifi ['tables_reference'] : file d'attente = 0 (0 bytes)
+-- dossier d'entree : 0 fichier(s) restant(s)
+-- destination HDFS : reason.dat doit etre present, warehouse.dat doit etre absent
+Found 3 items
+-rw-r--r--   1 nifi supergroup        327 2026-11-17 17:38 /retail-lake/raw/nifi/income_band.dat
+-rw-r--r--   1 nifi supergroup      3.0 K 2026-11-17 18:00 /retail-lake/raw/nifi/reason.dat
+-rw-r--r--   1 nifi supergroup      1.2 K 2026-11-17 16:58 /retail-lake/raw/nifi/ship_mode.dat
+-- contenu de reason.dat : depot NiFi et source
+d5edc45cb1e76afd
+d5edc45cb1e76afd
+-- attributs ajoutes par UpdateAttribute, journalises par LogAttribute (nifi-app.log)
+2026-11-17 18:00:23,800 INFO [Timer-Driven Process Thread-2] o.a.n.processors.standard.LogAttribute LogAttribute[id=ea71b0b3-01a1-1000-38c7-65ca45f1afcf] logging for FlowFile StandardFlowFileRecord[uuid=5368ea58-1847-4d6
+Key: 'jeu'
+Key: 'recu_par'
+Key: 'source'
+== Heure de fin : 17/11/2026 18:01:19

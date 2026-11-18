@@ -1,0 +1,20 @@
+== Heure de debut : 17/11/2026 17:21:08 (heure de Paris)
+== Erreur controlee : meme fichier depose une seconde fois (Conflict Resolution Strategy = fail) ==
+-- etat du flux
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=1 octets lus=1220 octets ecrits=1220 taches=5
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=1 octets lus=0 octets ecrits=0 taches=1
+    bulletin WARNING : PutHDFS[id=ea2e2d1d-01a1-1000-a0bb-6ca3255458e2] penalizing FlowFile[filename=ship_mode.dat] and routing to failure because file with same name already exists
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=0 octets ecrits=0 taches=1
+groupe UC04_ingestion_raw_nifi : en marche=3 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=3 arretes=0 invalides=0 desactives=0
+connexion failure : file d'attente = 0 (0 bytes)
+connexion success : file d'attente = 0 (0 bytes)
+-- destination HDFS : un seul fichier, ni doublon ni ecrasement
+Found 1 items
+-rw-r--r--   1 nifi supergroup      1.2 K 2026-11-17 16:58 /retail-lake/raw/nifi/ship_mode.dat
+-- journal NiFi (nifi-app.log)
+2026-11-17 17:21:08,959 WARN [Timer-Driven Process Thread-8] o.apache.nifi.processors.hadoop.PutHDFS PutHDFS[id=ea2e2d1d-01a1-1000-a0bb-6ca3255458e2] penalizing StandardFlowFileRecord[uuid=c6d141f3-0570-46a2-a336-7c5b8dd86f7a,claim=StandardContentClaim [resourceClaim=StandardResourceClaim[id=1794931110197-1, container=default, s
+== Heure de fin : 17/11/2026 17:22:02

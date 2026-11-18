@@ -1,0 +1,11 @@
+== Heure de debut : 17/11/2026 16:41:12 (heure de Paris)
+Instance : NiFi version 2.12.0
+Types de processeurs disponibles : 304
+- GetFile : disponible (nifi-standard-nar 2.12.0)
+- PutHDFS : disponible (nifi-hadoop-nar 2.12.0)
+- LogAttribute : disponible (nifi-standard-nar 2.12.0)
+Etat general : en marche=0 arretes=0 invalides=0 desactives=0
+Groupe racine : ea288b4e-01a1-1000-c120-a81d5faf911d ; processeurs=0 groupes=0
+Archives NAR dans l'image : 119
+Java : openjdk version "21.0.12.1" 2026-08-18 LTS
+== Heure de fin : 17/11/2026 16:41:16

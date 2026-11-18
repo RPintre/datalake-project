@@ -1,0 +1,32 @@
+== Heure de debut : 17/11/2026 15:26:10 (heure de Paris)
+== 8. Sources originales conservees : somme de controle recalculee apres le depot == [17/11/2026 15:26:10]
+sources inchangees : 36 ; modifiees : 0
+
+== 9. Integrite des blocs (fsck) == [17/11/2026 15:26:18]
+/retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat 92764700 bytes, replicated: replication=1, 1 block(s):  OK
+/retail-lake/raw/tpcxbb/initial/web_clickstreams/web_clickstreams.dat 178722140 bytes, replicated: replication=1, 2 block(s):  OK
+/retail-lake/raw/tpcxbb/refresh/store_sales/store_sales.dat 922171 bytes, replicated: replication=1, 1 block(s):  OK
+/retail-lake/raw/tpcxbb/refresh/web_clickstreams/web_clickstreams.dat 1821864 bytes, replicated: replication=1, 1 block(s):  OK
+Status: HEALTHY
+ Total size:	1033997849 B
+ Total files:	37
+ Total blocks (validated):	41 (avg. block size 25219459 B)
+ Under-replicated blocks:	0 (0.0 %)
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Total size:	0 B
+ Total files:	0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+The filesystem under path '/retail-lake' is HEALTHY
+
+== 10. Journal de provenance du depot manuel == [17/11/2026 15:26:22]
+Found 1 items
+-rw-r--r--   1 hadoop supergroup      9.8 K 2026-11-17 15:26 /retail-lake/logs/provenance/depot_manuel_uc03.csv
+Found 1 items
+-rw-r--r--   1 hadoop supergroup      4.2 K 2026-11-17 14:40 /retail-lake/quality/inventaire_fichiers_sources.csv
+lignes du journal : 36
+
+== Heure de fin : 17/11/2026 15:26:25

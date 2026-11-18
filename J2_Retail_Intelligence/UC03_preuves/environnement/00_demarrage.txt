@@ -1,0 +1,5 @@
+== Demarrage de l'environnement [17/11/2026 13:38:58] (heure de Paris)
+hdfs-client Up 5 seconds
+datanode Up 5 seconds
+namenode Up 5 seconds
+Safe mode : Safe mode is OFF

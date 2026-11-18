@@ -1,0 +1,41 @@
+== Heure de debut : 17/11/2026 15:12:56 (heure de Paris)
+== 4. Comparaison source locale et fichier stocke : taille et nombre de lignes == [17/11/2026 15:12:56]
+15:13:00 initial  customer_address       customer_address.dat              5387229      5387229      49500      49500  identique
+15:13:04 initial  customer               customer.dat                     13279063     13279063      99000      99000  identique
+15:13:08 initial  customer_demographics  customer_demographics.dat        77753083     77753083    1920800    1920800  identique
+15:13:11 initial  date_dim               date_dim.dat                     15395800     15395800     109573     109573  identique
+15:13:14 initial  household_demographics household_demographics.dat         155100       155100       7200       7200  identique
+15:13:17 initial  income_band            income_band.dat                       327          327         20         20  identique
+15:13:26 initial  inventory              inventory.dat                   424943678    424943678   23255100   23255100  identique
+15:13:29 initial  item                   item.dat                          6799286      6799286      17820      17820  identique
+15:13:33 initial  item_marketprices      item_marketprices_audit.csv           273          273          5          5  identique
+15:13:36 initial  item_marketprices      item_marketprices.dat             4201170      4201170      89100      89100  identique
+15:13:40 initial  product_reviews        product_reviews.dat              56355389     56355389      89991      89991  identique
+15:13:43 initial  promotion              promotion.dat                       46396        46396        300        300  identique
+15:13:46 initial  reason                 reason.dat                           3105         3105         35         35  identique
+15:13:49 initial  ship_mode              ship_mode.dat                        1220         1220         20         20  identique
+15:13:52 initial  store_returns          store_returns.dat                 4337400      4337400      37902      37902  identique
+15:13:57 initial  store_sales            store_sales.dat                  92764700     92764700     667579     667579  identique
+15:14:00 initial  store                  store.dat                            3386         3386         12         12  identique
+15:14:03 initial  time_dim               time_dim.dat                      5107780      5107780      86400      86400  identique
+15:14:06 initial  warehouse              warehouse.dat                         584          584          5          5  identique
+15:14:12 initial  web_clickstreams       web_clickstreams.dat            178722140    178722140    6770550    6770550  identique
+15:14:15 initial  web_page               web_page.dat                         8040         8040         60         60  identique
+15:14:18 initial  web_returns            web_returns.dat                   5383513      5383513      38487      38487  identique
+15:14:23 initial  web_sales              web_sales.dat                   133790574    133790574     668052     668052  identique
+15:14:26 initial  web_site               web_site.dat                         8838         8838         30         30  identique
+15:14:29 refresh  customer_address       customer_address.dat                54587        54587        500        500  identique
+15:14:32 refresh  customer               customer.dat                       134360       134360       1000       1000  identique
+15:14:36 refresh  inventory              inventory.dat                     4292915      4292915     234900     234900  identique
+15:14:39 refresh  item                   item.dat                            69173        69173        180        180  identique
+15:14:42 refresh  item_marketprices      item_marketprices_audit.csv        151009       151009      17986      17986  identique
+15:14:45 refresh  item_marketprices      item_marketprices.dat               42547        42547        900        900  identique
+15:14:48 refresh  product_reviews        product_reviews.dat                573685       573685        909        909  identique
+15:14:51 refresh  store_returns          store_returns.dat                   48825        48825        426        426  identique
+15:14:54 refresh  store_sales            store_sales.dat                    922171       922171       6632       6632  identique
+15:14:58 refresh  web_clickstreams       web_clickstreams.dat              1821864      1821864      68988      68988  identique
+15:15:01 refresh  web_returns            web_returns.dat                     55952        55952        400        400  identique
+15:15:04 refresh  web_sales              web_sales.dat                     1378425      1378425       6879       6879  identique
+fichiers compares : 36 ; tailles ou lignes differentes : 0
+
+== Heure de fin : 17/11/2026 15:15:04

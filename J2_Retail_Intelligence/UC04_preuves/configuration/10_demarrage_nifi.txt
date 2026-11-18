@@ -1,0 +1,11 @@
+== Heure de debut : 17/11/2026 16:37:44 (heure de Paris)
+Creation d'un nouveau conteneur NiFi (heure de Paris, archives Hadoop montees, etat vierge)
+Volumes d'etat de NiFi : suffixe 1117163745 (instance vierge)
+API NiFi : HTTP 401 (401 = demarree, authentification requise)
+nifi Up 31 seconds
+hdfs-client Up 3 hours
+datanode Up 3 hours
+namenode Up 3 hours
+Horloge du conteneur NiFi : 17/11/2026 16:38:16 CET
+Archives ajoutees : nifi-hadoop-libraries-nar-2.12.0.nar, nifi-hadoop-nar-2.12.0.nar
+== Heure de fin : 17/11/2026 16:38:17

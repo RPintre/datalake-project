@@ -1,0 +1,31 @@
+== Heure de debut : 17/11/2026 18:31:39 (heure de Paris)
+== Traitement d'un fichier et capture des compteurs du canvas : warehouse.dat (non reconnu, journalise sans depot) ==
+Fichier place dans /data/nifi/input : warehouse.dat
+-- etat du flux 35 s apres le demarrage (flux en marche)
+GetFile_entree               type=GetFile       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=1 octets lus=584 octets ecrits=584 taches=5
+PutHDFS_raw_nifi             type=PutHDFS       etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+LogAttribute_echec_depot     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=0 sortis=0 octets lus=0 octets ecrits=0 taches=0
+UpdateAttribute_suivi        type=UpdateAttribute etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=1 octets lus=0 octets ecrits=0 taches=1
+RouteOnAttribute_domaine     type=RouteOnAttribute etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=1 octets lus=0 octets ecrits=0 taches=1
+LogAttribute_non_reconnu     type=LogAttribute  etat=RUNNING   validation=VALID
+    FlowFiles entres=1 sortis=0 octets lus=0 octets ecrits=0 taches=1
+groupe UC04_ingestion_raw_nifi : en marche=6 arretes=0 invalides=0 desactives=0 ; nombre d'avertissements actifs=0
+instance NiFi : en marche=6 arretes=0 invalides=0 desactives=0
+connexion PutHDFS_raw_nifi -> LogAttribute_echec_depot ['failure'] : file d'attente = 0 (0 bytes)
+connexion GetFile_entree -> UpdateAttribute_suivi ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> LogAttribute_non_reconnu ['unmatched'] : file d'attente = 0 (0 bytes)
+connexion UpdateAttribute_suivi -> RouteOnAttribute_domaine ['success'] : file d'attente = 0 (0 bytes)
+connexion RouteOnAttribute_domaine -> PutHDFS_raw_nifi ['tables_reference'] : file d'attente = 0 (0 bytes)
+-- capture du canvas (flux en marche, compteurs sur 5 minutes)
+capture : nifi_05_canvas_compteurs.png
+-- dossier d'entree : 0 fichier(s) restant(s) ; destination HDFS inchangee :
+Found 3 items
+-rw-r--r--   1 nifi supergroup        327 2026-11-17 17:38 /retail-lake/raw/nifi/income_band.dat
+-rw-r--r--   1 nifi supergroup      3.0 K 2026-11-17 18:00 /retail-lake/raw/nifi/reason.dat
+-rw-r--r--   1 nifi supergroup      1.2 K 2026-11-17 16:58 /retail-lake/raw/nifi/ship_mode.dat
+== Heure de fin : 17/11/2026 18:34:18
