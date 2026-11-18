@@ -1,0 +1,40 @@
+== Etape 1 : 01_environnement.py | debut 18/11/2026 12:31:18 (heure de Paris)
+
+======== Environnement [18/11/2026 12:31:21] ========
+Python        : 3.10.12
+Spark/PySpark : 4.2.1
+Java          : 21.0.13
+Mode (master) : local[*]
+Coeurs        : 16 | parallelisme par defaut : 16
+Memoire driver: 4g
+Fuseau        : Europe/Paris
+Entree (Raw)  : hdfs://namenode:8020/retail-lake/raw/tpcxbb
+Sorties       : hdfs://namenode:8020/retail-lake/silver hdfs://namenode:8020/retail-lake/gold hdfs://namenode:8020/retail-lake/quality
+
+======== Lecture d'un fichier de test (reason, zone Raw) [18/11/2026 12:31:25] ========
+root
+ |-- r_reason_sk: string (nullable = true)
+ |-- r_reason_id: string (nullable = true)
+ |-- r_reason_desc: string (nullable = true)
+
++-----------+--------------+-----------------------------------------------------------------------------------------+
+|r_reason_sk|r_reason_id   |r_reason_desc                                                                            |
++-----------+--------------+-----------------------------------------------------------------------------------------+
+|0          |59h3KawhwK    |slyly thin dugouts on the ironically enticing realms woul                                |
+|1          |a6TzYqeb5XgwOe|epitaphs will have to affix stealthily even notornis! warhorses since the busy att       |
+|2          |R2PsDlX       |excuses after the permanent courts try to was excuses? fluffy silent orbits d            |
+|3          |HZNdBl        |fluffily stealthy excuses until the quick pearls engage idly brave attainments! close gif|
+|4          |o1tg          |brave quiet waters print carefully among the brave regular waters! brave sauternes       |
++-----------+--------------+-----------------------------------------------------------------------------------------+
+only showing top 5 rows
+Lignes : 35
+
+======== Ecriture de test dans un repertoire dedie (les sources ne sont pas modifiees) [18/11/2026 12:31:29] ========
+root
+ |-- r_reason_sk: long (nullable = true)
+ |-- r_reason_id: string (nullable = true)
+ |-- r_reason_desc: string (nullable = true)
+ |-- jeu_source: string (nullable = true)
+
+Lignes relues : 35 | repertoire : hdfs://namenode:8020/retail-lake/quality/test_ecriture/reason
+== fin 18/11/2026 12:31:31

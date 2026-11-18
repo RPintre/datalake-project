@@ -1,0 +1,285 @@
+== Etape 3 : 03_exploration.py | debut 18/11/2026 14:33:52 (heure de Paris)
+
+======== Exploration : store_sales [18/11/2026 14:33:59] ========
+Lignes : 674211 | colonnes : 23
+root
+ |-- ss_sold_date_sk: long (nullable = true)
+ |-- ss_sold_time_sk: long (nullable = true)
+ |-- ss_item_sk: long (nullable = true)
+ |-- ss_customer_sk: long (nullable = true)
+ |-- ss_cdemo_sk: long (nullable = true)
+ |-- ss_hdemo_sk: long (nullable = true)
+ |-- ss_addr_sk: long (nullable = true)
+ |-- ss_store_sk: long (nullable = true)
+ |-- ss_promo_sk: long (nullable = true)
+ |-- ss_ticket_number: long (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_list_price: decimal(7,2) (nullable = true)
+ |-- ss_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_discount_amt: decimal(7,2) (nullable = true)
+ |-- ss_ext_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_ext_list_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_tax: decimal(7,2) (nullable = true)
+ |-- ss_coupon_amt: decimal(7,2) (nullable = true)
+ |-- ss_net_paid: decimal(7,2) (nullable = true)
+ |-- ss_net_paid_inc_tax: decimal(7,2) (nullable = true)
+ |-- ss_net_profit: decimal(7,2) (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+
+|ss_sold_date_sk|ss_sold_time_sk|ss_item_sk|ss_customer_sk|ss_cdemo_sk|ss_hdemo_sk|ss_addr_sk|ss_store_sk|ss_promo_sk|ss_ticket_number|ss_quantity|ss_wholesale_cost|ss_list_price|ss_sales_price|ss_ext_discount_amt|ss_ext_sales_price|ss_ext_wholesale_cost|ss_ext_list_price|ss_ext_tax|ss_coupon_amt|ss_net_paid|ss_net_paid_inc_tax|ss_net_profit|jeu_source|
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+
+|          36890|          71480|     10001|         44404|     493944|       2898|     44093|         10|        294|               0|         31|            18.00|        30.78|         23.08|             238.70|            715.48|               558.00|           954.18|     21.46|         0.00|     715.48|             736.94|       157.48|   initial|
+|          36890|          71480|     10000|         44404|     493944|       2898|     44093|         10|        279|               0|         54|            99.21|       148.82|         83.34|            3535.92|           4500.36|              5357.34|          8036.28|    225.02|         0.00|    4500.36|            4725.38|      -856.98|   initial|
+|          36890|          71480|     15556|         44404|     493944|       2898|     44093|         10|        114|               0|         39|            79.49|        94.59|         83.24|             442.65|           3246.36|              3100.11|          3689.01|    184.07|       616.81|    2629.55|            2813.62|      -470.56|   initial|
+|          36890|          45392|      4597|         89832|    1774847|       6266|     16285|          4|        285|               1|         20|            74.38|       136.12|        133.40|              54.40|           2668.00|              1487.60|          2722.40|    133.40|         0.00|    2668.00|            2801.40|      1180.40|   initial|
+|          36890|          45392|      3258|         89832|    1774847|       6266|     16285|          4|        230|               1|         76|             9.83|        14.45|         11.85|             197.60|            900.60|               747.08|          1098.20|     18.01|         0.00|     900.60|             918.61|       153.52|   initial|
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   ss_cdemo_sk                      250 (0.04 %)
+   ss_hdemo_sk                      308 (0.05 %)
+   ss_addr_sk                       462 (0.07 %)
+   ss_promo_sk                      159 (0.02 %)
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 4182 repetition(s) de la cle ['ss_ticket_number', 'ss_item_sk']
++-------+-------+--------+--------+----------+----------+
+|qte_min|qte_max|prix_min|prix_max|profit_min|profit_max|
++-------+-------+--------+--------+----------+----------+
+|      1|    100|    0.00|  199.30|  -9866.60|   9134.00|
++-------+-------+--------+--------+----------+----------+
+
+Quantite <= 0 : 0 | prix de vente < 0 : 0 | profit net < 0 : 500889
+Prix de vente = 0 (remise totale ou donnee synthetique) : 3361 | montant net paye = 0 : 3995
+Ecart ss_ext_sales_price != quantite x prix : 0
+
+======== Exploration : store_returns [18/11/2026 14:34:16] ========
+Lignes : 38328 | colonnes : 20
+root
+ |-- sr_returned_date_sk: long (nullable = true)
+ |-- sr_return_time_sk: long (nullable = true)
+ |-- sr_item_sk: long (nullable = true)
+ |-- sr_customer_sk: long (nullable = true)
+ |-- sr_cdemo_sk: long (nullable = true)
+ |-- sr_hdemo_sk: long (nullable = true)
+ |-- sr_addr_sk: long (nullable = true)
+ |-- sr_store_sk: long (nullable = true)
+ |-- sr_reason_sk: long (nullable = true)
+ |-- sr_ticket_number: long (nullable = true)
+ |-- sr_return_quantity: integer (nullable = true)
+ |-- sr_return_amt: decimal(7,2) (nullable = true)
+ |-- sr_return_tax: decimal(7,2) (nullable = true)
+ |-- sr_return_amt_inc_tax: decimal(7,2) (nullable = true)
+ |-- sr_fee: decimal(7,2) (nullable = true)
+ |-- sr_return_ship_cost: decimal(7,2) (nullable = true)
+ |-- sr_refunded_cash: decimal(7,2) (nullable = true)
+ |-- sr_reversed_charge: decimal(7,2) (nullable = true)
+ |-- sr_store_credit: decimal(7,2) (nullable = true)
+ |-- sr_net_loss: decimal(7,2) (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++-------------------+-----------------+----------+--------------+-----------+-----------+----------+-----------+------------+----------------+------------------+-------------+-------------+---------------------+------+-------------------+----------------+------------------+---------------+-----------+----------+
+|sr_returned_date_sk|sr_return_time_sk|sr_item_sk|sr_customer_sk|sr_cdemo_sk|sr_hdemo_sk|sr_addr_sk|sr_store_sk|sr_reason_sk|sr_ticket_number|sr_return_quantity|sr_return_amt|sr_return_tax|sr_return_amt_inc_tax|sr_fee|sr_return_ship_cost|sr_refunded_cash|sr_reversed_charge|sr_store_credit|sr_net_loss|jeu_source|
++-------------------+-----------------+----------+--------------+-----------+-----------+----------+-----------+------------+----------------+------------------+-------------+-------------+---------------------+------+-------------------+----------------+------------------+---------------+-----------+----------+
+|              38806|            37121|     15784|          5206|     647228|       4483|      7207|          5|          17|           64537|                 9|       142.38|         2.85|               145.23| 39.94|             554.44|          101.09|              8.26|          33.03|     560.14|   initial|
+|              37388|             1727|      8140|         60704|    1478832|       5094|     30228|          6|          12|           22850|                43|      5709.11|        57.09|              5766.20| 11.34|            5184.82|         3025.83|            939.15|        1744.13|    5299.00|   initial|
+|              37388|            26037|      6639|         60704|    1478832|       5094|     30228|          6|          33|           22850|                 2|        71.44|         0.71|                72.15| 72.68|              80.49|           37.86|             11.75|          21.83|      81.91|   initial|
+|              37388|            65998|      4629|         60704|    1478832|       5094|     30228|          6|           4|           22850|                12|        64.44|         0.64|                65.08| 52.35|              67.50|           34.15|             10.60|          19.69|      68.78|   initial|
+|              37388|            21420|     17474|         60704|    1478832|       5094|     30228|          6|          11|           22850|                 3|         4.44|         0.04|                 4.48| 92.92|             395.96|            2.35|              0.73|           1.36|     396.04|   initial|
++-------------------+-----------------+----------+--------------+-----------+-----------+----------+-----------+------------+----------------+------------------+-------------+-------------+---------------------+------+-------------------+----------------+------------------+---------------+-----------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   sr_cdemo_sk                       21 (0.05 %)
+   sr_hdemo_sk                       15 (0.04 %)
+   sr_addr_sk                        42 (0.11 %)
+   sr_reason_sk                      11 (0.03 %)
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 160 repetition(s) de la cle ['sr_ticket_number', 'sr_item_sk']
++-------+-------+-----------+-----------+
+|qte_min|qte_max|montant_min|montant_max|
++-------+-------+-----------+-----------+
+|      1|    100|       0.00|   15441.30|
++-------+-------+-----------+-----------+
+
+Quantite retournee <= 0 : 0
+
+======== Exploration : item [18/11/2026 14:34:20] ========
+Lignes : 18000 | colonnes : 22
+root
+ |-- i_item_sk: long (nullable = true)
+ |-- i_item_id: string (nullable = true)
+ |-- i_rec_start_date: string (nullable = true)
+ |-- i_rec_end_date: string (nullable = true)
+ |-- i_item_desc: string (nullable = true)
+ |-- i_current_price: decimal(7,2) (nullable = true)
+ |-- i_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- i_brand_id: integer (nullable = true)
+ |-- i_brand: string (nullable = true)
+ |-- i_class_id: integer (nullable = true)
+ |-- i_class: string (nullable = true)
+ |-- i_category_id: integer (nullable = true)
+ |-- i_category: string (nullable = true)
+ |-- i_manufact_id: integer (nullable = true)
+ |-- i_manufact: string (nullable = true)
+ |-- i_size: string (nullable = true)
+ |-- i_formulation: string (nullable = true)
+ |-- i_color: string (nullable = true)
+ |-- i_units: string (nullable = true)
+ |-- i_container: string (nullable = true)
+ |-- i_manager_id: integer (nullable = true)
+ |-- i_product_name: string (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++---------+----------------+----------------+--------------+----------------------------------------+---------------+----------------+----------+---------------------------------+----------+---------------------+-------------+-----------------+-------------+----------------------------------------+------+--------------------+--------+-------+-----------+------------+----------------------------------------+----------+
+|i_item_sk|       i_item_id|i_rec_start_date|i_rec_end_date|                             i_item_desc|i_current_price|i_wholesale_cost|i_brand_id|                          i_brand|i_class_id|              i_class|i_category_id|       i_category|i_manufact_id|                              i_manufact|i_size|       i_formulation| i_color|i_units|i_container|i_manager_id|                          i_product_name|jeu_source|
++---------+----------------+----------------+--------------+----------------------------------------+---------------+----------------+----------+---------------------------------+----------+---------------------+-------------+-----------------+-------------+----------------------------------------+------+--------------------+--------+-------+-----------+------------+----------------------------------------+----------+
+|        0|AAAAAAAAAAAAAAAA|      2000-01-14|          NULL|quickly even dinos beneath the frays ...|          72.29|           64.96|   3898712|71TS7NSbvH1YbdiQMG6ttBHKAljiNoIRB|         1|             Fan Shop|            9|Sports & Outdoors|          995|                        2VOxvrIWwlJQTSk6| small|  99Ee1r6uFbZSSClAX3|  dodger|     Oz|    Unknown|          18|8m9n5Q7T33DNWidoA6nWlg6ydmpA1SKOoOJLX...|   initial|
+|        1|AAAAAAAAAAAAAAAB|      2000-09-23|          NULL|quietly quiet hockey players outside ...|          95.67|           30.57|   2218494|                  qNBimHGBu763udH|         4|                  New|            3|            Books|           69|       M0VWtUYYkxy6iEMa2XZOxQSCTxFrOqsXg|petite| dz1S8VrTflBJIq1kC61|     tan|   Dram|    Unknown|          91|              CPB648WB37uUv5OCqjzYe7rH3T|   initial|
+|        2|AAAAAAAAAAAAAAAC|      2000-09-01|          NULL|dogged dugouts need to maintain regul...|          62.74|           47.70|   6043423|                              ma5|         3|Education & Reference|            3|            Books|          831|                  SXEWAxq6kTcO8sAwISBAM9|   N/A|nF9XEmsyODYrRYXE2P8H|    mint|  Bunch|    Unknown|          19|bMcWnXWH4yWhqADKdlZicQXcIhd48e8iROsSc...|   initial|
+|        3|AAAAAAAAAAAAAAAD|      2000-12-12|          NULL|ideas within the quiet sly asymptotes...|          98.67|           76.61|   7023779|                op9d25ZWK4zQ7JNAc|         3|Education & Reference|            3|            Books|          289|GJG7sd2NX3jWQ75hZnibJ9PpCpdnish8TWzGw...|petite|    DO8ImgmTbjXFBHux|    pink|   Case|    Unknown|          99|                             gqbhNi4JCS7|   initial|
+|        4|AAAAAAAAAAAAAAAE|      2000-04-04|          NULL|permanent careful notornis engage ins...|          40.95|           82.68|   5087894|              RYLn4HY3I3kooPCNhwV|         2|           NO_SUB_CAT|            3|            Books|          511|x83t3sgzXqyvPSbg8eTcyBXWAYNeak7EvFJVB...| large|tOrdc4PMUMrwZto1eZdL|blanched|   Dram|    Unknown|          54|                                    WinA|   initial|
++---------+----------------+----------------+--------------+----------------------------------------+---------------+----------------+----------+---------------------------------+----------+---------------------+-------------+-----------------+-------------+----------------------------------------+------+--------------------+--------+-------+-----------+------------+----------------------------------------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   i_rec_end_date                 18000 (100.00 %)
+   i_item_desc                        4 (0.02 %)
+   i_brand_id                         8 (0.04 %)
+   i_brand                            6 (0.03 %)
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 0 repetition(s) de la cle ['i_item_sk']
++--------+--------+
+|prix_min|prix_max|
++--------+--------+
+|    0.10|   99.98|
++--------+--------+
+
+Prix courant <= 0 : 0
+
+======== Exploration : store [18/11/2026 14:34:23] ========
+Lignes : 12 | colonnes : 29
+root
+ |-- s_store_sk: long (nullable = true)
+ |-- s_store_id: string (nullable = true)
+ |-- s_rec_start_date: string (nullable = true)
+ |-- s_rec_end_date: string (nullable = true)
+ |-- s_closed_date_sk: long (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- s_number_employees: integer (nullable = true)
+ |-- s_floor_space: integer (nullable = true)
+ |-- s_hours: string (nullable = true)
+ |-- s_manager: string (nullable = true)
+ |-- s_market_id: integer (nullable = true)
+ |-- s_geography_class: string (nullable = true)
+ |-- s_market_desc: string (nullable = true)
+ |-- s_market_manager: string (nullable = true)
+ |-- s_division_id: integer (nullable = true)
+ |-- s_division_name: string (nullable = true)
+ |-- s_company_id: integer (nullable = true)
+ |-- s_company_name: string (nullable = true)
+ |-- s_street_number: string (nullable = true)
+ |-- s_street_name: string (nullable = true)
+ |-- s_street_type: string (nullable = true)
+ |-- s_suite_number: string (nullable = true)
+ |-- s_city: string (nullable = true)
+ |-- s_county: string (nullable = true)
+ |-- s_state: string (nullable = true)
+ |-- s_zip: string (nullable = true)
+ |-- s_country: string (nullable = true)
+ |-- s_gmt_offset: decimal(5,2) (nullable = true)
+ |-- s_tax_precentage: decimal(5,2) (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++----------+----------------+----------------+--------------+----------------+------------+------------------+-------------+--------+--------------+-----------+-----------------+----------------------------------------+----------------+-------------+---------------+------------+--------------+---------------+---------------+-------------+--------------+------------+---------------+-------+-----+-------------+------------+----------------+----------+
+|s_store_sk|      s_store_id|s_rec_start_date|s_rec_end_date|s_closed_date_sk|s_store_name|s_number_employees|s_floor_space| s_hours|     s_manager|s_market_id|s_geography_class|                           s_market_desc|s_market_manager|s_division_id|s_division_name|s_company_id|s_company_name|s_street_number|  s_street_name|s_street_type|s_suite_number|      s_city|       s_county|s_state|s_zip|    s_country|s_gmt_offset|s_tax_precentage|jeu_source|
++----------+----------------+----------------+--------------+----------------+------------+------------------+-------------+--------+--------------+-----------+-----------------+----------------------------------------+----------------+-------------+---------------+------------+--------------+---------------+---------------+-------------+--------------+------------+---------------+-------+-----+-------------+------------+----------------+----------+
+|         0|AAAAAAAAAAAAAAAA|      2000-08-02|          NULL|           71238|      Forest|               217|      8891512|8AM-12AM| Joshua Watson|          6|          Unknown|realms sublate quickly outside the ep...|      Randy King|            1|        Unknown|           1|       Unknown|            916|            1st|    Boulevard|            XF|    Post Oak|Hinsdale County|     CO|47562|United States|       -7.00|            0.06|   initial|
+|         1|AAAAAAAAAAAAAAAB|      2000-07-03|          NULL|           18994|    Hillside|               244|      8751339| 8AM-4PM|     Gary Gold|          3|          Unknown|close escapades across the carefully ...|      John Green|            1|        Unknown|           1|       Unknown|            696|        3rd 4th|         Blvd|     gcg5eGNxs|   Jerusalem|   Union County|     TN|80145|United States|       -6.00|            0.03|   initial|
+|         2|AAAAAAAAAAAAAAAC|      2000-09-01|          NULL|            8900|    Sherwood|               266|      5913334| 8AM-4PM|James Anderson|          6|          Unknown|frays may kindle over the bold ironic...|Raymond Kitchens|            1|        Unknown|           1|       Unknown|            293|Main Fourteenth|          Ct.|        8pCGst|Mount Vernon|  Sierra County|     CA|97832|United States|       -8.00|            0.07|   initial|
+|         3|AAAAAAAAAAAAAAAD|      2000-06-02|          NULL|           69902|     Pioneer|               221|      5777026| 8AM-4PM| Owen Kirchner|          4|          Unknown|close idle foxes beside the quick fox...|  Steven Talbott|            1|        Unknown|           1|       Unknown|            297| Williams River|        Court|        0fSBho|      Austin| Grayson County|     TX|42774|United States|       -6.00|            0.10|   initial|
+|         4|AAAAAAAAAAAAAAAE|      2000-07-03|          NULL|           79617|     Elmwood|               254|      7508523| 8AM-4PM| Derrick Ewing|          3|          Unknown|brave sly dependencies on the dolphin...| Martin Mckinley|            1|        Unknown|           1|       Unknown|            398|         Laurel|           Ln|            Us|    Lakeside|Marshall County|     KY|64295|United States|       -5.00|            0.04|   initial|
++----------+----------------+----------------+--------------+----------------+------------+------------------+-------------+--------+--------------+-----------+-----------------+----------------------------------------+----------------+-------------+---------------+------------+--------------+---------------+---------------+-------------+--------------+------------+---------------+-------+-----+-------------+------------+----------------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   s_rec_end_date                    12 (100.00 %)
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 0 repetition(s) de la cle ['s_store_sk']
+
+======== Exploration : date_dim [18/11/2026 14:34:25] ========
+Lignes : 109573 | colonnes : 28
+root
+ |-- d_date_sk: long (nullable = true)
+ |-- d_date_id: string (nullable = true)
+ |-- d_date: string (nullable = true)
+ |-- d_month_seq: integer (nullable = true)
+ |-- d_week_seq: integer (nullable = true)
+ |-- d_quarter_seq: integer (nullable = true)
+ |-- d_year: integer (nullable = true)
+ |-- d_dow: integer (nullable = true)
+ |-- d_moy: integer (nullable = true)
+ |-- d_dom: integer (nullable = true)
+ |-- d_qoy: integer (nullable = true)
+ |-- d_fy_year: integer (nullable = true)
+ |-- d_fy_quarter_seq: integer (nullable = true)
+ |-- d_fy_week_seq: integer (nullable = true)
+ |-- d_day_name: string (nullable = true)
+ |-- d_quarter_name: string (nullable = true)
+ |-- d_holiday: string (nullable = true)
+ |-- d_weekend: string (nullable = true)
+ |-- d_following_holiday: string (nullable = true)
+ |-- d_first_dom: integer (nullable = true)
+ |-- d_last_dom: integer (nullable = true)
+ |-- d_same_day_ly: integer (nullable = true)
+ |-- d_same_day_lq: integer (nullable = true)
+ |-- d_current_day: string (nullable = true)
+ |-- d_current_week: string (nullable = true)
+ |-- d_current_month: string (nullable = true)
+ |-- d_current_quarter: string (nullable = true)
+ |-- d_current_year: string (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++---------+----------------+----------+-----------+----------+-------------+------+-----+-----+-----+-----+---------+----------------+-------------+----------+--------------+---------+---------+-------------------+-----------+----------+-------------+-------------+-------------+--------------+---------------+-----------------+--------------+----------+
+|d_date_sk|       d_date_id|    d_date|d_month_seq|d_week_seq|d_quarter_seq|d_year|d_dow|d_moy|d_dom|d_qoy|d_fy_year|d_fy_quarter_seq|d_fy_week_seq|d_day_name|d_quarter_name|d_holiday|d_weekend|d_following_holiday|d_first_dom|d_last_dom|d_same_day_ly|d_same_day_lq|d_current_day|d_current_week|d_current_month|d_current_quarter|d_current_year|jeu_source|
++---------+----------------+----------+-----------+----------+-------------+------+-----+-----+-----+-----+---------+----------------+-------------+----------+--------------+---------+---------+-------------------+-----------+----------+-------------+-------------+-------------+--------------+---------------+-----------------+--------------+----------+
+|        0|AAAAAAAAAAAAAAAA|1900-01-01|          0|         0|            0|  1900|    1|    1|    1|    1|     1900|               0|            0|    Monday|        1900Q1|        Y|        N|                  N|    2448812|   2458802|      2472542|      2420941|            N|             N|              N|                N|             N|   initial|
+|        1|AAAAAAAAAAAAAAAB|1900-01-02|          0|         0|            0|  1900|    2|    1|    2|    1|     1900|               0|            0|   Tuesday|        1900Q1|        Y|        N|                  N|    2441612|   2427135|      2449909|      2430434|            N|             N|              N|                N|             N|   initial|
+|        2|AAAAAAAAAAAAAAAC|1900-01-03|          0|         0|            0|  1900|    3|    1|    3|    1|     1900|               0|            0| Wednesday|        1900Q1|        Y|        N|                  N|    2436156|   2449280|      2455660|      2433174|            N|             N|              N|                N|             N|   initial|
+|        3|AAAAAAAAAAAAAAAD|1900-01-04|          0|         0|            0|  1900|    4|    1|    4|    1|     1900|               0|            0|  Thursday|        1900Q1|        Y|        N|                  Y|    2417967|   2415922|      2478062|      2434335|            N|             N|              N|                N|             N|   initial|
+|        4|AAAAAAAAAAAAAAAE|1900-01-05|          0|         0|            0|  1900|    5|    1|    5|    1|     1900|               0|            0|    Friday|        1900Q1|        Y|        N|                  Y|    2476746|   2478037|      2449873|      2441986|            N|             N|              N|                N|             N|   initial|
++---------+----------------+----------+-----------+----------+-------------+------+-----+-----+-----+-----+---------+----------------+-------------+----------+--------------+---------+---------+-------------------+-----------+----------+-------------+-------------+-------------+--------------+---------------+-----------------+--------------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   aucune
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 0 repetition(s) de la cle ['d_date_sk']
++---------+---------+----------+----------+
+|annee_min|annee_max|  date_min|  date_max|
++---------+---------+----------+----------+
+|     1900|     2199|1900-01-01|2199-12-31|
++---------+---------+----------+----------+
+
+
+======== Exploration : reason [18/11/2026 14:34:29] ========
+Lignes : 35 | colonnes : 3
+root
+ |-- r_reason_sk: long (nullable = true)
+ |-- r_reason_id: string (nullable = true)
+ |-- r_reason_desc: string (nullable = true)
+ |-- jeu_source: string (nullable = false)
+
++-----------+--------------+----------------------------------------+----------+
+|r_reason_sk|   r_reason_id|                           r_reason_desc|jeu_source|
++-----------+--------------+----------------------------------------+----------+
+|          0|    59h3KawhwK|slyly thin dugouts on the ironically ...|   initial|
+|          1|a6TzYqeb5XgwOe|epitaphs will have to affix stealthil...|   initial|
+|          2|       R2PsDlX|excuses after the permanent courts tr...|   initial|
+|          3|        HZNdBl|fluffily stealthy excuses until the q...|   initial|
+|          4|          o1tg|brave quiet waters print carefully am...|   initial|
++-----------+--------------+----------------------------------------+----------+
+only showing top 5 rows
+Valeurs nulles par colonne (colonnes concernees) :
+   aucune
+Echecs de conversion de type : aucun
+Doublons : 0 ligne(s) strictement identique(s) ; 0 repetition(s) de la cle ['r_reason_sk']
+== fin 18/11/2026 14:34:30

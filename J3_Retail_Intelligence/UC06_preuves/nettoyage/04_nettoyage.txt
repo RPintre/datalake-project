@@ -1,0 +1,23 @@
+== Etape 4 : 04_nettoyage.py | debut 18/11/2026 15:24:52 (heure de Paris)
+
+======== R1 Types : echecs de conversion (valeur non vide devenue NULL) [18/11/2026 15:24:58] ========
+store_sales    aucun echec
+store_returns  aucun echec
+item           aucun echec
+store          aucun echec
+date_dim       aucun echec
+reason         aucun echec
+
+======== Dimensions nettoyees (R1, R3, cle obligatoire, R6) [18/11/2026 15:25:16] ========
+item       lues :    18000 | conservees :    18000
+store      lues :       12 | conservees :       12
+reason     lues :       35 | conservees :       35
+date_dim   lues :   109573 | conservees :   109573
+
+======== Tables de faits : R3 doublons exacts, R2 cle obligatoire, R5 references [18/11/2026 15:25:23] ========
+store_sales : 674211 lignes lues, 0 doublon(s) exact(s) retire(s) (R3), 674211 conservees, 0 en quarantaine (controle : 674211 = 674211 + 0 -> OK)
+store_returns : 38328 lignes lues, 0 doublon(s) exact(s) retire(s) (R3), 38328 conservees, 0 en quarantaine (controle : 38328 = 38328 + 0 -> OK)
+
+======== R4 Montants et quantites negatifs ou nuls : conserves, comptes [18/11/2026 15:25:42] ========
+store_sales quantite <= 0 : 0 | prix de vente < 0 : 0 | profit net < 0 (vente a perte, conservee) : 500889
+== fin 18/11/2026 15:25:48

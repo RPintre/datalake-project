@@ -1,0 +1,10 @@
+== Notebook d'exploration : jupyter nbconvert --execute | debut 18/11/2026 14:49:28 (heure de Paris)
+7.17.2
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 14:49:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[NbConvertApp] Writing 17507 bytes to /sorties/notebook_exploration.ipynb
+[NbConvertApp] Converting notebook /sorties/notebook_exploration.ipynb to html
+[NbConvertApp] Writing 312404 bytes to /sorties/notebook_exploration.html
+== fin 18/11/2026 14:50:05

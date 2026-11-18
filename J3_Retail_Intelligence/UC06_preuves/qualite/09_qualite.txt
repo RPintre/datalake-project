@@ -1,0 +1,55 @@
+== Etape 9 : 09_qualite.py | debut 18/11/2026 17:11:48 (heure de Paris)
+
+======== Completude : champs obligatoires non nuls [18/11/2026 17:11:58] ========
+[OK      ] Completude   store_sales.ss_ticket_number non nul                           0 nulls
+[OK      ] Completude   store_sales.ss_item_sk non nul                                 0 nulls
+[OK      ] Completude   store_sales.ss_sold_date_sk non nul                            0 nulls
+[OK      ] Completude   store_sales.ss_store_sk non nul                                0 nulls
+[OK      ] Completude   store_returns.sr_ticket_number non nul                         0 nulls
+[OK      ] Completude   store_returns.sr_item_sk non nul                               0 nulls
+[OK      ] Completude   store_returns.sr_returned_date_sk non nul                      0 nulls
+[OK      ] Completude   store_returns.sr_store_sk non nul                              0 nulls
+
+======== Unicite : cles candidates [18/11/2026 17:12:02] ========
+[OK      ] Unicite      item : cle ['i_item_sk'] unique                                0 repetitions
+[OK      ] Unicite      store : cle ['s_store_sk'] unique                              0 repetitions
+[OK      ] Unicite      date_dim : cle ['d_date_sk'] unique                            0 repetitions
+[OK      ] Unicite      reason : cle ['r_reason_sk'] unique                            0 repetitions
+[OK      ] Unicite      store_sales : cle composite ['ss_ticket_number', 'ss_item_sk'] 4182 repetitions signalees, lignes de valeurs differentes conservees (R3)
+[OK      ] Unicite      store_returns : cle composite ['sr_ticket_number', 'sr_item_sk'] 160 repetitions signalees, lignes de valeurs differentes conservees (R3)
+
+======== Validite des types : schema relu = schema attendu [18/11/2026 17:12:05] ========
+[OK      ] Validite     store_sales : types conformes a la specification               0 
+[OK      ] Validite     store_returns : types conformes a la specification             0 
+[OK      ] Validite     item : types conformes a la specification                      0 
+[OK      ] Validite     store : types conformes a la specification                     0 
+[OK      ] Validite     reason : types conformes a la specification                    0 
+
+======== Coherence des valeurs [18/11/2026 17:12:05] ========
+[OK      ] Coherence    store_sales : quantite > 0                                     0 lignes a quantite <= 0 (conservees, R4)
+[OK      ] Coherence    store_sales : prix de vente >= 0                               0 
+[OK      ] Coherence    store_sales : prix de vente non nul (information, limite des donnees) 3361 lignes a prix 0, conservees (R4) et a interpreter avec prudence
+[OK      ] Coherence    store_sales : montant = quantite x prix unitaire (tolerance 0,01) 0 lignes en ecart
+[OK      ] Coherence    store_returns : quantite retournee > 0                         0 
+[OK      ] Coherence    date_dim : mois entre 1 et 12                                  0 
+
+======== Volumes : lignes lues = lignes Silver + quarantaine + doublons exacts [18/11/2026 17:12:07] ========
+[OK      ] Volume       store_sales : 674211 lues = 674211 Silver + 0 quarantaine + 0 doublons 674211 
+[OK      ] Volume       store_returns : 38328 lues = 38328 Silver + 0 quarantaine + 0 doublons 38328 
+
+======== Integrite referentielle (Silver) [18/11/2026 17:12:16] ========
+[OK      ] Integrite    store_sales.ss_item_sk -> i_item_sk                            0 orphelins
+[OK      ] Integrite    store_sales.ss_store_sk -> s_store_sk                          0 orphelins
+[OK      ] Integrite    store_sales.ss_sold_date_sk -> d_date_sk                       0 orphelins
+[OK      ] Integrite    store_returns.sr_item_sk -> i_item_sk                          0 orphelins
+[OK      ] Integrite    store_returns.sr_reason_sk -> r_reason_sk (motifs renseignes)  0 orphelins
+
+======== Coherence Gold / Silver [18/11/2026 17:12:18] ========
+[OK      ] Gold         somme CA Gold magasin = somme CA Silver                        1290066342.21 / 1290066342.21 
+[OK      ] Gold         somme CA Gold categorie = somme CA Silver                      1290066342.21 / 1290066342.21 
+[OK      ] Gold         quantites retournees Gold = Silver                             982900 / 982900 
+
+======== Bilan [18/11/2026 17:12:19] ========
+35 controle(s) OK sur 35 ; anomalies : 0
+Rapport ecrit : hdfs://namenode:8020/retail-lake/quality/rapport_qualite_uc06
+== fin 18/11/2026 17:12:22

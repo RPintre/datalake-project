@@ -1,0 +1,50 @@
+== Etape 7 : 07_gold.py | debut 18/11/2026 16:41:40 (heure de Paris)
+
+======== Ecriture Gold (Parquet) [18/11/2026 16:41:50] ========
+/gold/ventes_par_mois_magasin : 720 lignes, colonnes : annee_mois, s_store_sk, s_store_name, s_state, nb_lignes_vente, quantite_vendue, chiffre_affaires, profit_net, date_traitement
+/gold/ventes_par_mois_categorie : 540 lignes, colonnes : annee_mois, categorie, nb_lignes_vente, quantite_vendue, chiffre_affaires, date_traitement
+/gold/retours_par_motif : 36 lignes, colonnes : motif, nb_lignes_retour, quantite_retournee, montant_retourne, date_traitement
+
+======== Apercu des jeux Gold [18/11/2026 16:41:57] ========
++----------+----------+------------+-------+---------------+---------------+----------------+----------+---------------+
+|annee_mois|s_store_sk|s_store_name|s_state|nb_lignes_vente|quantite_vendue|chiffre_affaires|profit_net|date_traitement|
++----------+----------+------------+-------+---------------+---------------+----------------+----------+---------------+
+|2001-01   |0         |Forest      |CO     |861            |44609          |1543731.88      |-846846.06|2026-11-18     |
+|2001-01   |1         |Hillside    |TN     |932            |47121          |1749652.48      |-754801.44|2026-11-18     |
+|2001-01   |2         |Sherwood    |CA     |810            |42102          |1612097.24      |-647082.55|2026-11-18     |
+|2001-01   |3         |Pioneer     |TX     |987            |49402          |1827181.80      |-736476.39|2026-11-18     |
+|2001-01   |4         |Elmwood     |KY     |950            |48855          |1812412.63      |-794777.25|2026-11-18     |
+|2001-01   |5         |Egypt       |KY     |1033           |50160          |1842807.72      |-834333.25|2026-11-18     |
+|2001-01   |6         |Bloomfield  |IN     |926            |46926          |1782659.51      |-706645.38|2026-11-18     |
+|2001-01   |7         |Buffalo     |KS     |880            |45620          |1680007.82      |-746053.08|2026-11-18     |
++----------+----------+------------+-------+---------------+---------------+----------------+----------+---------------+
+only showing top 8 rows
++----------+------------------------+---------------+---------------+----------------+---------------+
+|annee_mois|categorie               |nb_lignes_vente|quantite_vendue|chiffre_affaires|date_traitement|
++----------+------------------------+---------------+---------------+----------------+---------------+
+|2001-01   |Books                   |3090           |156283         |5904827.68      |2026-11-18     |
+|2001-01   |Clothing & Accessories  |506            |26032          |1045157.58      |2026-11-18     |
+|2001-01   |Electronics             |548            |27159          |961799.46       |2026-11-18     |
+|2001-01   |Home & Kitchen          |407            |19693          |780228.89       |2026-11-18     |
+|2001-01   |Movies & TV             |744            |37685          |1294050.98      |2026-11-18     |
+|2001-01   |Music                   |5091           |258235         |9440403.39      |2026-11-18     |
+|2001-01   |Sports & Outdoors       |418            |20693          |821931.27       |2026-11-18     |
+|2001-01   |Tools & Home Improvement|288            |14191          |509492.27       |2026-11-18     |
++----------+------------------------+---------------+---------------+----------------+---------------+
+only showing top 8 rows
++-----------------------------------------------------------------------------------------------+----------------+------------------+----------------+---------------+
+|motif                                                                                          |nb_lignes_retour|quantite_retournee|montant_retourne|date_traitement|
++-----------------------------------------------------------------------------------------------+----------------+------------------+----------------+---------------+
+|bold warhorses should have to unwind beside the carefully blithe platelets? s                  |1154            |28275             |1047550.45      |2026-11-18     |
+|idly ironic dugouts over the stealthy regular tithes shall grow along the furious frets. wartho|1146            |29952             |1144324.88      |2026-11-18     |
+|fluffily stealthy excuses until the quick pearls engage idly brave attainments! close gif      |1145            |29323             |1029075.39      |2026-11-18     |
+|thinly furious pearls was quietly dogged busy forges! thin sheave                              |1144            |30312             |1101931.40      |2026-11-18     |
+|stealthy pains impress ruthlessly! warthogs through the idle thi                               |1134            |29164             |1153778.01      |2026-11-18     |
+|bold escapades by the bold permanent ideas should have to serve except the blith               |1128            |28341             |1091359.54      |2026-11-18     |
+|stealthily slow grouches mold quietly in place of the waters! regular dogged pint              |1128            |28073             |1007985.50      |2026-11-18     |
+|excuses after the permanent courts try to was excuses? fluffy silent orbits d                  |1123            |29087             |1098190.59      |2026-11-18     |
+|Tiresias' serve courts; sly regular epitaphs ought to x-ray! n                                 |1115            |29593             |1110850.45      |2026-11-18     |
+|brave quiet waters print carefully among the brave regular waters! brave sauternes             |1109            |27903             |1031915.62      |2026-11-18     |
++-----------------------------------------------------------------------------------------------+----------------+------------------+----------------+---------------+
+only showing top 10 rows
+== fin 18/11/2026 16:41:58

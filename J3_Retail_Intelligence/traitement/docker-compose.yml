@@ -1,0 +1,24 @@
+# UC-06 : traitement PySpark (Spark en mode local) sur la zone Raw HDFS du Jour 2.
+# Prerequis : la pile HDFS du Jour 2 (dossier J2_Retail_Intelligence/ingestion) est demarree ; ce conteneur rejoint son reseau.
+# Lancement : docker compose up -d      Arret : docker compose stop
+services:
+  spark:
+    image: apache/spark:4.2.1-python3
+    container_name: spark
+    hostname: spark
+    user: root
+    command: ["sleep", "infinity"]
+    environment:
+      TZ: Europe/Paris
+      HADOOP_USER_NAME: hadoop        # meme utilisateur HDFS que le Data Lake du Jour 2
+    mem_limit: 5g
+    volumes:
+      - ./scripts:/scripts:ro
+      - ./sorties:/sorties
+    networks:
+      - hdfs
+
+networks:
+  hdfs:
+    name: ingestion_default
+    external: true

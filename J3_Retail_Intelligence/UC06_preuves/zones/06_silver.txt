@@ -1,0 +1,51 @@
+== Etape 6 : 06_silver.py | debut 18/11/2026 16:22:15 (heure de Paris)
+
+======== Ecriture Silver (Parquet, mode overwrite sur la zone Silver dediee) [18/11/2026 16:22:48] ========
+ecrit : hdfs://namenode:8020/retail-lake/silver/item (18000 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/store (12 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/reason (35 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/date_dim (109573 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/store_sales (674211 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/_quarantaine/store_sales (0 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/store_returns (38328 lignes attendues)
+ecrit : hdfs://namenode:8020/retail-lake/silver/_quarantaine/store_returns (0 lignes attendues)
+
+======== Controle apres ecriture : presence, format, lisibilite, lignes, schema [18/11/2026 16:23:04] ========
+/silver/item                     8 fichier(s) parquet,     3707489 octets,    18000 lignes, 23 colonnes -> OK
+/silver/store                    6 fichier(s) parquet,       55601 octets,       12 lignes, 30 colonnes -> OK
+/silver/reason                   8 fichier(s) parquet,       15670 octets,       35 lignes, 4 colonnes -> OK
+/silver/date_dim                 8 fichier(s) parquet,     5683176 octets,   109573 lignes, 29 colonnes -> OK
+/silver/store_sales              8 fichier(s) parquet,    44895176 octets,   674211 lignes, 25 colonnes -> OK
+/silver/_quarantaine/store_sales 1 fichier(s) parquet,        2857 octets,        0 lignes, 25 colonnes -> OK
+/silver/store_returns            2 fichier(s) parquet,     2310284 octets,    38328 lignes, 22 colonnes -> OK
+/silver/_quarantaine/store_returns 1 fichier(s) parquet,        2515 octets,        0 lignes, 22 colonnes -> OK
+
+======== Schema Silver : store_sales [18/11/2026 16:23:06] ========
+root
+ |-- ss_sold_date_sk: long (nullable = true)
+ |-- ss_sold_time_sk: long (nullable = true)
+ |-- ss_item_sk: long (nullable = true)
+ |-- ss_customer_sk: long (nullable = true)
+ |-- ss_cdemo_sk: long (nullable = true)
+ |-- ss_hdemo_sk: long (nullable = true)
+ |-- ss_addr_sk: long (nullable = true)
+ |-- ss_store_sk: long (nullable = true)
+ |-- ss_promo_sk: long (nullable = true)
+ |-- ss_ticket_number: long (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_list_price: decimal(7,2) (nullable = true)
+ |-- ss_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_discount_amt: decimal(7,2) (nullable = true)
+ |-- ss_ext_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_ext_list_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_tax: decimal(7,2) (nullable = true)
+ |-- ss_coupon_amt: decimal(7,2) (nullable = true)
+ |-- ss_net_paid: decimal(7,2) (nullable = true)
+ |-- ss_net_paid_inc_tax: decimal(7,2) (nullable = true)
+ |-- ss_net_profit: decimal(7,2) (nullable = true)
+ |-- jeu_source: string (nullable = true)
+ |-- date_traitement: date (nullable = true)
+
+== fin 18/11/2026 16:23:07

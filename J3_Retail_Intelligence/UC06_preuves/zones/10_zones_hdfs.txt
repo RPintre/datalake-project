@@ -1,0 +1,77 @@
+== Etape 10 : releve des zones HDFS | debut 18/11/2026 17:24:30 (heure de Paris)
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:23 /retail-lake/silver/_quarantaine/store_returns/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       2515 2026-11-18 16:23 /retail-lake/silver/_quarantaine/store_returns/part-00000-587b3abb-9f50-46f3-8315-adf41843ddde-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:23 /retail-lake/silver/_quarantaine/store_sales/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       2857 2026-11-18 16:23 /retail-lake/silver/_quarantaine/store_sales/part-00000-7ab94f77-9141-4e0c-b6ac-384912e87407-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:22 /retail-lake/silver/date_dim/_SUCCESS
+-rw-r--r--   1 hadoop supergroup     721110 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00000-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     710780 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00001-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     701851 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00002-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     709198 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00003-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     714751 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00004-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     714490 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00005-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     707612 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00006-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     703384 2026-11-18 16:22 /retail-lake/silver/date_dim/part-00007-b222cd07-787f-4e67-9e93-43d6f83297f0-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:22 /retail-lake/silver/item/_SUCCESS
+-rw-r--r--   1 hadoop supergroup     469840 2026-11-18 16:22 /retail-lake/silver/item/part-00000-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     458044 2026-11-18 16:22 /retail-lake/silver/item/part-00001-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     462971 2026-11-18 16:22 /retail-lake/silver/item/part-00002-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     466535 2026-11-18 16:22 /retail-lake/silver/item/part-00003-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     462904 2026-11-18 16:22 /retail-lake/silver/item/part-00004-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     458178 2026-11-18 16:22 /retail-lake/silver/item/part-00005-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     458993 2026-11-18 16:22 /retail-lake/silver/item/part-00006-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup     470024 2026-11-18 16:22 /retail-lake/silver/item/part-00007-8b42f766-2087-424a-a327-019a821ce121-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:22 /retail-lake/silver/reason/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       2373 2026-11-18 16:22 /retail-lake/silver/reason/part-00000-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1984 2026-11-18 16:22 /retail-lake/silver/reason/part-00001-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       2264 2026-11-18 16:22 /retail-lake/silver/reason/part-00002-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1950 2026-11-18 16:22 /retail-lake/silver/reason/part-00003-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1948 2026-11-18 16:22 /retail-lake/silver/reason/part-00004-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1814 2026-11-18 16:22 /retail-lake/silver/reason/part-00005-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1633 2026-11-18 16:22 /retail-lake/silver/reason/part-00006-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       1704 2026-11-18 16:22 /retail-lake/silver/reason/part-00007-9fac64ec-bfc4-4ee3-8a48-60d4071ae20e-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:22 /retail-lake/silver/store/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       9056 2026-11-18 16:22 /retail-lake/silver/store/part-00000-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       9156 2026-11-18 16:22 /retail-lake/silver/store/part-00002-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       9266 2026-11-18 16:22 /retail-lake/silver/store/part-00004-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       9468 2026-11-18 16:22 /retail-lake/silver/store/part-00005-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       9154 2026-11-18 16:22 /retail-lake/silver/store/part-00006-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       9501 2026-11-18 16:22 /retail-lake/silver/store/part-00007-e7be2171-6a3d-4749-bdb2-c2ec7f427217-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:23 /retail-lake/silver/store_returns/_SUCCESS
+-rw-r--r--   1 hadoop supergroup     906595 2026-11-18 16:23 /retail-lake/silver/store_returns/part-00000-3350aca5-6eee-44e6-b3db-b88de0066fe4-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    1403689 2026-11-18 16:23 /retail-lake/silver/store_returns/part-00001-3350aca5-6eee-44e6-b3db-b88de0066fe4-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:22 /retail-lake/silver/store_sales/_SUCCESS
+-rw-r--r--   1 hadoop supergroup    5583514 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00000-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5616938 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00001-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5615638 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00002-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5610171 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00003-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5625914 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00004-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5639914 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00005-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5597855 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00006-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup    5605232 2026-11-18 16:22 /retail-lake/silver/store_sales/part-00007-8d8cf1ab-a3ba-46fa-832c-7cfe3db07aa6-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:41 /retail-lake/gold/retours_par_motif/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       4004 2026-11-18 16:41 /retail-lake/gold/retours_par_motif/part-00000-2b3b911e-feec-4f7a-a83c-49c8b7ac68b5-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:41 /retail-lake/gold/ventes_par_mois_categorie/_SUCCESS
+-rw-r--r--   1 hadoop supergroup      10759 2026-11-18 16:41 /retail-lake/gold/ventes_par_mois_categorie/part-00000-d16ec63a-2a10-4884-b3a2-13517d531142-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 16:41 /retail-lake/gold/ventes_par_mois_magasin/_SUCCESS
+-rw-r--r--   1 hadoop supergroup      18257 2026-11-18 16:41 /retail-lake/gold/ventes_par_mois_magasin/part-00000-f20e4e74-aa0e-4141-baac-c3d6cd2380ba-c000.snappy.parquet
+-rw-r--r--   1 hadoop supergroup       4262 2026-11-17 14:40 /retail-lake/quality/inventaire_fichiers_sources.csv
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 17:12 /retail-lake/quality/rapport_qualite_uc06/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       2596 2026-11-18 17:12 /retail-lake/quality/rapport_qualite_uc06/part-00000-c57f5e8f-815f-48c0-94bb-17b32f98ae19-c000.csv
+-rw-r--r--   1 hadoop supergroup          0 2026-11-18 12:31 /retail-lake/quality/test_ecriture/reason/_SUCCESS
+-rw-r--r--   1 hadoop supergroup       3871 2026-11-18 12:31 /retail-lake/quality/test_ecriture/reason/part-00000-621b549b-e9d9-4234-a741-a0fceee54eb3-c000.snappy.parquet
+
+5.2 K   5.2 K   /retail-lake/silver/_quarantaine
+5.4 M   5.4 M   /retail-lake/silver/date_dim
+3.5 M   3.5 M   /retail-lake/silver/item
+15.3 K  15.3 K  /retail-lake/silver/reason
+54.3 K  54.3 K  /retail-lake/silver/store
+2.2 M   2.2 M   /retail-lake/silver/store_returns
+42.8 M  42.8 M  /retail-lake/silver/store_sales
+3.9 K   3.9 K   /retail-lake/gold/retours_par_motif
+10.5 K  10.5 K  /retail-lake/gold/ventes_par_mois_categorie
+17.8 K  17.8 K  /retail-lake/gold/ventes_par_mois_magasin
+4.2 K   4.2 K   /retail-lake/quality/inventaire_fichiers_sources.csv
+2.5 K   2.5 K   /retail-lake/quality/rapport_qualite_uc06
+3.8 K   3.8 K   /retail-lake/quality/test_ecriture
+== fin 18/11/2026 17:24:34

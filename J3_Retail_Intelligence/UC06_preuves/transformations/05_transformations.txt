@@ -1,0 +1,52 @@
+== Etape 5 : 05_transformations.py | debut 18/11/2026 15:46:55 (heure de Paris)
+
+======== Verification des cles de jointure (unicite cote dimension) [18/11/2026 15:47:10] ========
+item       i_item_sk    18000 lignes, 18000 valeurs distinctes -> relation plusieurs-a-un verifiee
+store      s_store_sk   12 lignes, 12 valeurs distinctes -> relation plusieurs-a-un verifiee
+date_dim   d_date_sk    109573 lignes, 109573 valeurs distinctes -> relation plusieurs-a-un verifiee
+reason     r_reason_sk  35 lignes, 35 valeurs distinctes -> relation plusieurs-a-un verifiee
+
+======== Jointures : ventes x article, date, magasin (jointures gauches) [18/11/2026 15:47:16] ========
+ventes + article  : avant 674211 | apres 674211 | non rapprochees : 0
+   + date         : apres 674211 | non rapprochees : 0
+   + magasin      : apres 674211 | non rapprochees : 0
+Cardinalite : chaque vente a au plus une ligne par dimension -> le nombre de lignes doit rester 674211
+
+======== Jointure : retours x motif [18/11/2026 15:47:24] ========
+retours : avant 38328 | apres 38328 | sans motif rapproche : 11 | motif absent dans le fait : 11
+
+======== Colonnes calculees et agregations (apercu) [18/11/2026 15:47:25] ========
++----------+------+--------+-----------+
+|annee_mois|lignes|quantite|ca         |
++----------+------+--------+-----------+
+|2001-01   |11378 |574902  |21329226.01|
+|2001-02   |10491 |529739  |19964670.13|
+|2001-03   |11431 |569439  |21724974.85|
+|2001-04   |11081 |557668  |21020109.04|
+|2001-05   |11474 |584690  |22003924.87|
+|2001-06   |11124 |562702  |21626561.44|
+|2001-07   |11458 |576657  |22123785.32|
+|2001-08   |11455 |578727  |21752837.67|
+|2001-09   |11125 |567922  |21595240.28|
+|2001-10   |11442 |578060  |22356984.72|
+|2001-11   |11196 |566623  |21252823.06|
+|2001-12   |11218 |567105  |21408257.94|
++----------+------+--------+-----------+
+only showing top 12 rows
+Granularite : une ligne = un mois ; ca = somme de ss_ext_sales_price (montant de vente hors taxe).
++-----------------------------------------------------------------------------------------------+-------+--------+----------+
+|r_reason_desc                                                                                  |retours|quantite|montant   |
++-----------------------------------------------------------------------------------------------+-------+--------+----------+
+|bold warhorses should have to unwind beside the carefully blithe platelets? s                  |1154   |28275   |1047550.45|
+|idly ironic dugouts over the stealthy regular tithes shall grow along the furious frets. wartho|1146   |29952   |1144324.88|
+|fluffily stealthy excuses until the quick pearls engage idly brave attainments! close gif      |1145   |29323   |1029075.39|
+|thinly furious pearls was quietly dogged busy forges! thin sheave                              |1144   |30312   |1101931.40|
+|stealthy pains impress ruthlessly! warthogs through the idle thi                               |1134   |29164   |1153778.01|
+|bold escapades by the bold permanent ideas should have to serve except the blith               |1128   |28341   |1091359.54|
+|stealthily slow grouches mold quietly in place of the waters! regular dogged pint              |1128   |28073   |1007985.50|
+|excuses after the permanent courts try to was excuses? fluffy silent orbits d                  |1123   |29087   |1098190.59|
+|Tiresias' serve courts; sly regular epitaphs ought to x-ray! n                                 |1115   |29593   |1110850.45|
+|brave quiet waters print carefully among the brave regular waters! brave sauternes             |1109   |27903   |1031915.62|
++-----------------------------------------------------------------------------------------------+-------+--------+----------+
+only showing top 10 rows
+== fin 18/11/2026 15:47:27

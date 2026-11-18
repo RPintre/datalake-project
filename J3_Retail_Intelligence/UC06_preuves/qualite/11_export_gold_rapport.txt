@@ -1,0 +1,10 @@
+== Etape 11 : export des jeux Gold et du rapport qualite depuis HDFS | debut 18/11/2026 17:24:34 (heure de Paris)
+4004 /tmp/export/gold/retours_par_motif/part-00000-2b3b911e-feec-4f7a-a83c-49c8b7ac68b5-c000.snappy.parquet
+0 /tmp/export/gold/retours_par_motif/_SUCCESS
+10759 /tmp/export/gold/ventes_par_mois_categorie/part-00000-d16ec63a-2a10-4884-b3a2-13517d531142-c000.snappy.parquet
+0 /tmp/export/gold/ventes_par_mois_categorie/_SUCCESS
+18257 /tmp/export/gold/ventes_par_mois_magasin/part-00000-f20e4e74-aa0e-4141-baac-c3d6cd2380ba-c000.snappy.parquet
+0 /tmp/export/gold/ventes_par_mois_magasin/_SUCCESS
+2596 /tmp/export/rapport_qualite_uc06.csv
+32 /tmp/export/.rapport_qualite_uc06.csv.crc
+== fin 18/11/2026 17:24:38

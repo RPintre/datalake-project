@@ -1,0 +1,25 @@
+== Etape 2 : 02_inventaire.py | debut 18/11/2026 14:03:36 (heure de Paris)
+
+======== Inventaire des sources (zone Raw : jeu initial + rafraichissement) [18/11/2026 14:03:43] ========
+store_sales    initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat | CSV sans en-tete, separateur | |   92 764 700 octets |   667 579 lignes | 23 colonnes
+store_sales    refresh  hdfs://namenode:8020/retail-lake/raw/tpcxbb/refresh/store_sales/store_sales.dat | CSV sans en-tete, separateur | |      922 171 octets |     6 632 lignes | 23 colonnes
+   -> store_sales : 674211 lignes reunies ; cle candidate ['ss_ticket_number', 'ss_item_sk'] : 670029 valeurs distinctes (NON unique : 4182 repetitions), 0 cle(s) nulle(s)
+   colonnes principales et types : ss_sold_date_sk:bigint, ss_sold_time_sk:bigint, ss_item_sk:bigint, ss_customer_sk:bigint, ss_cdemo_sk:bigint, ss_hdemo_sk:bigint ...
+store_returns  initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/store_returns/store_returns.dat | CSV sans en-tete, separateur | |    4 337 400 octets |    37 902 lignes | 20 colonnes
+store_returns  refresh  hdfs://namenode:8020/retail-lake/raw/tpcxbb/refresh/store_returns/store_returns.dat | CSV sans en-tete, separateur | |       48 825 octets |       426 lignes | 20 colonnes
+   -> store_returns : 38328 lignes reunies ; cle candidate ['sr_ticket_number', 'sr_item_sk'] : 38168 valeurs distinctes (NON unique : 160 repetitions), 0 cle(s) nulle(s)
+   colonnes principales et types : sr_returned_date_sk:bigint, sr_return_time_sk:bigint, sr_item_sk:bigint, sr_customer_sk:bigint, sr_cdemo_sk:bigint, sr_hdemo_sk:bigint ...
+item           initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/item/item.dat | CSV sans en-tete, separateur | |    6 799 286 octets |    17 820 lignes | 22 colonnes
+item           refresh  hdfs://namenode:8020/retail-lake/raw/tpcxbb/refresh/item/item.dat | CSV sans en-tete, separateur | |       69 173 octets |       180 lignes | 22 colonnes
+   -> item : 18000 lignes reunies ; cle candidate ['i_item_sk'] : 18000 valeurs distinctes (unique), 0 cle(s) nulle(s)
+   colonnes principales et types : i_item_sk:bigint, i_item_id:string, i_rec_start_date:string, i_rec_end_date:string, i_item_desc:string, i_current_price:decimal(7,2) ...
+store          initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/store/store.dat | CSV sans en-tete, separateur | |        3 386 octets |        12 lignes | 29 colonnes
+   -> store : 12 lignes reunies ; cle candidate ['s_store_sk'] : 12 valeurs distinctes (unique), 0 cle(s) nulle(s)
+   colonnes principales et types : s_store_sk:bigint, s_store_id:string, s_rec_start_date:string, s_rec_end_date:string, s_closed_date_sk:bigint, s_store_name:string ...
+date_dim       initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/date_dim/date_dim.dat | CSV sans en-tete, separateur | |   15 395 800 octets |   109 573 lignes | 28 colonnes
+   -> date_dim : 109573 lignes reunies ; cle candidate ['d_date_sk'] : 109573 valeurs distinctes (unique), 0 cle(s) nulle(s)
+   colonnes principales et types : d_date_sk:bigint, d_date_id:string, d_date:string, d_month_seq:int, d_week_seq:int, d_quarter_seq:int ...
+reason         initial  hdfs://namenode:8020/retail-lake/raw/tpcxbb/initial/reason/reason.dat | CSV sans en-tete, separateur | |        3 105 octets |        35 lignes | 3 colonnes
+   -> reason : 35 lignes reunies ; cle candidate ['r_reason_sk'] : 35 valeurs distinctes (unique), 0 cle(s) nulle(s)
+   colonnes principales et types : r_reason_sk:bigint, r_reason_id:string, r_reason_desc:string ...
+== fin 18/11/2026 14:03:57

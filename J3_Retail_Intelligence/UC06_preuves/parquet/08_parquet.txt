@@ -1,0 +1,52 @@
+== Etape 8 : 08_parquet.py | debut 18/11/2026 16:57:07 (heure de Paris)
+
+======== Relecture Parquet : Silver store_sales [18/11/2026 16:57:14] ========
+root
+ |-- ss_sold_date_sk: long (nullable = true)
+ |-- ss_sold_time_sk: long (nullable = true)
+ |-- ss_item_sk: long (nullable = true)
+ |-- ss_customer_sk: long (nullable = true)
+ |-- ss_cdemo_sk: long (nullable = true)
+ |-- ss_hdemo_sk: long (nullable = true)
+ |-- ss_addr_sk: long (nullable = true)
+ |-- ss_store_sk: long (nullable = true)
+ |-- ss_promo_sk: long (nullable = true)
+ |-- ss_ticket_number: long (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_list_price: decimal(7,2) (nullable = true)
+ |-- ss_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_discount_amt: decimal(7,2) (nullable = true)
+ |-- ss_ext_sales_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_wholesale_cost: decimal(7,2) (nullable = true)
+ |-- ss_ext_list_price: decimal(7,2) (nullable = true)
+ |-- ss_ext_tax: decimal(7,2) (nullable = true)
+ |-- ss_coupon_amt: decimal(7,2) (nullable = true)
+ |-- ss_net_paid: decimal(7,2) (nullable = true)
+ |-- ss_net_paid_inc_tax: decimal(7,2) (nullable = true)
+ |-- ss_net_profit: decimal(7,2) (nullable = true)
+ |-- jeu_source: string (nullable = true)
+ |-- date_traitement: date (nullable = true)
+
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+---------------+
+|ss_sold_date_sk|ss_sold_time_sk|ss_item_sk|ss_customer_sk|ss_cdemo_sk|ss_hdemo_sk|ss_addr_sk|ss_store_sk|ss_promo_sk|ss_ticket_number|ss_quantity|ss_wholesale_cost|ss_list_price|ss_sales_price|ss_ext_discount_amt|ss_ext_sales_price|ss_ext_wholesale_cost|ss_ext_list_price|ss_ext_tax|ss_coupon_amt|ss_net_paid|ss_net_paid_inc_tax|ss_net_profit|jeu_source|date_traitement|
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+---------------+
+|37429          |55634          |2245      |32661         |1195395    |6809       |29855     |7          |286        |26582           |96         |95.24            |152.38       |0.00          |14628.48           |0.00              |9143.04              |14628.48         |0.00      |0.00         |0.00       |0.00               |-9143.04     |initial   |2026-11-18     |
+|37679          |38079          |3704      |32663         |1640012    |6150       |32488     |0          |33         |38933           |99         |91.17            |181.43       |0.00          |17961.57           |0.00              |9025.83              |17961.57         |0.00      |0.00         |0.00       |0.00               |-9025.83     |initial   |2026-11-18     |
+|38600          |11031          |6639      |26311         |1553253    |3335       |38153     |9          |251        |84309           |91         |95.63            |177.87       |108.50        |6312.67            |9873.50           |8702.33              |16186.17         |0.00      |9873.50      |0.00       |0.00               |-8702.33     |initial   |2026-11-18     |
+|37783          |19820          |7548      |90081         |1756058    |4013       |36933     |10         |251        |44016           |99         |84.95            |152.06       |0.00          |15053.94           |0.00              |8410.05              |15053.94         |0.00      |0.00         |0.00       |0.00               |-8410.05     |initial   |2026-11-18     |
+|38602          |8811           |8208      |70251         |704085     |5670       |2247      |11         |109        |84415           |95         |88.41            |128.19       |0.00          |12178.05           |0.00              |8398.95              |12178.05         |0.00      |0.00         |0.00       |0.00               |-8398.95     |initial   |2026-11-18     |
++---------------+---------------+----------+--------------+-----------+-----------+----------+-----------+-----------+----------------+-----------+-----------------+-------------+--------------+-------------------+------------------+---------------------+-----------------+----------+-------------+-----------+-------------------+-------------+----------+---------------+
+only showing top 5 rows
+Lignes relues : 674211
+
+======== Comparaison CSV brut / Parquet (store_sales, memes lignes : jeu initial + rafraichissement) [18/11/2026 16:57:17] ========
+Taille CSV (.dat)          :     93686871 octets
+Taille Parquet (Silver)    :     44895176 octets  (rapport 0.48)
+Somme de ss_ext_sales_price : CSV 1290066342.21 en 0.93 s | Parquet 1290066342.21 en 0.36 s
+Note : le CSV conserve les lignes de la quarantaine et les doublons ; la somme Parquet porte sur Silver. Les durees dependent de la machine, du cache et de la taille : elles sont donnees a titre indicatif.
+JSON : non disponible dans le jeu (les sources sont en CSV) -> non compare.
+
+======== Parquet seul n'est pas une table transactionnelle [18/11/2026 16:57:21] ========
+Un repertoire Parquet n'offre ni transaction (ACID), ni historique de versions, ni suppression ou mise a jour de lignes : ces garanties demandent un format de table Lakehouse (Delta Lake, Iceberg, Hudi), non utilise ici.
+== fin 18/11/2026 16:57:21
